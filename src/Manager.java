@@ -2,121 +2,112 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Manager {
-    int numberID = 0;
-    HashMap<Integer, Task> tasks = new HashMap<>();
-    HashMap<Integer, Epic> epics = new HashMap<>();
-    ArrayList<Subtask> subtasks;
-    HashMap<Epic, ArrayList<Subtask>> subtasksAndEpics = new HashMap<>();
-    private int num;
+    int idCounter = 0;
+    protected HashMap<Integer, Task> tasks = new HashMap<>();
+    protected HashMap<Integer, Epic> epics = new HashMap<>();
+    protected HashMap<Integer, Subtask> subtasks = new HashMap<>();
+    private int idCounterEpic;
 
-    void createSubtaskAndEpics(Epic epic, Subtask subtask1, Subtask subtask2) {
-        numberID += 1;
-        epic.number = numberID;
+    void createEpic(Epic epic) {
+        idCounter += 1;
+        epic.number = idCounter;
         epics.put(epic.number, epic);
-        subtasks = new ArrayList<>();
-        numberID += 1;
-        subtask1.number = numberID;
-        if (subtask2 != null) {
-            numberID += 1;
-            subtask2.number = numberID;
-        }
-        subtasks.add(subtask1);
-        subtasks.add(subtask2);
-        subtasksAndEpics.put(epic, subtasks);
     }
 
-    void createTask(int number, Task task) {
-        numberID += 1;
-        task.number = numberID;
-        tasks.put(number, task);
+    void createSubtask(Subtask subtask, int epicNumber) {
+        idCounter += 1;
+        subtask.number = idCounter;
+        subtasks.put(subtask.number, subtask);
+        subtask.idEpic = epicNumber;
     }
 
-    void removeTask(int number) {
-        tasks.remove(number);
+    void createTask(Task task) {
+        idCounter += 1;
+        task.number = idCounter;
+        tasks.put(task.number, task);
     }
 
-    void removeEpic(int num) {
-        this.num = num;
-        subtasksAndEpics.remove(epics.get(num));
-        epics.remove(num);
+    void removeTask(int numberIdTask) {
+        tasks.remove(numberIdTask);
     }
 
-    void removeSubtask(int number) {
-        for (ArrayList<Subtask> subtasks : subtasksAndEpics.values()) {
-            for (Subtask subtask : subtasks) {
-                if (subtask.number == number) {
-                    subtasks.remove(subtask);
-                }
-            }
-        }
+    void removeEpic(int numberIdEpic) {
+        epics.remove(numberIdEpic);
+    }
 
+    void removeSubtask(int numberIdSubtask) {
+        subtasks.remove(numberIdSubtask);
     }
 
     void removeAll() {
         tasks.clear();
         epics.clear();
-        subtasksAndEpics.clear();
+        subtasks.clear();
     }
 
-    void getTaskOrEpicOrSubtask(int number) {
-        if (tasks.containsKey(number)) {
-            System.out.println(tasks.get(number).taskName);
-        } else if (epics.containsKey(number)) {
-            System.out.println(epics.get(number).epicName);
-        } else {
-            for (ArrayList<Subtask> subtasks : subtasksAndEpics.values()) {
-                for (Subtask subtask : subtasks) {
-                    if (subtask.number == number) {
-                        System.out.println(subtask.subtaskName);
-                    }
-                }
+    void getTask(int numberIdTask) {
+        tasks.get(numberIdTask);
+    }
+
+    void getEpic(int numberIdEpic) {
+        epics.get(numberIdEpic);
+    }
+
+    void getSubtask(int numberIdSubtask) {
+        subtasks.get(numberIdSubtask);
+    }
+
+    void getAllTask() {
+        for (Integer idTask : tasks.keySet()) {
+            System.out.println(idTask + " " + tasks.get(idTask) + " " + tasks.get(idTask).status);
+        }
+    }
+
+    void getAllEpic() {
+        for (Integer idEpic : epics.keySet()) {
+            System.out.println(idEpic + " " + epics.get(idEpic).epicName + " " + epics.get(idEpic).status);
+            getSubtasksOfEpic(idEpic);
+        }
+    }
+
+    void getSubtasksOfEpic(int idEpic) {
+        for (Integer idSubtask : subtasks.keySet()) {
+            if (subtasks.get(idSubtask).idEpic == idEpic) {
+                System.out.println(idSubtask + " " + subtasks.get(idSubtask).subtaskName + " " + subtasks.get(idSubtask).status);
             }
         }
     }
 
-    void getAllSubtaskInEpic(Epic epic) {
-        for (Subtask subtask : subtasksAndEpics.get(epic)) {
-            if (subtask != null) {
-                System.out.println(subtask.number + " " + subtask.subtaskName + " (Подзадача) " + subtask.status);
-            }
-        }
+    void q() {
+        System.out.println(subtasks.get(2).idEpic);
     }
 
     void getAll() {
-        for (Integer task : tasks.keySet()) {
-            System.out.println(tasks.get(task).number + " " + tasks.get(task).taskName + " (Простая задача) " + tasks.get(task).status);
-        }
-        for (Epic epic : subtasksAndEpics.keySet()) {
-            System.out.println(epic.number + " " + epic.epicName + " (Большая задача) " + epic.status);
-            for (Subtask subtask : subtasksAndEpics.get(epic)) {
-                if (subtask != null) {
-                    System.out.println(subtask.number + " " + subtask.subtaskName + " (Подзадача) " + subtask.status);
+        getAllTask();
+        getAllEpic();
+    }
 
+    void updateStatusTask(int taskNumber, String status) {
+        tasks.get(taskNumber).status = status;
+    }
+
+    void updateStatusSubtask(int subtaskNumber, String status) {
+        subtasks.get(subtaskNumber).status = status;
+        int sizeSubtaskEpic = 0;
+        int sizeSubtaskDONE = 0;
+
+        for (Subtask subtask1 : subtasks.values()) {
+            if (subtask1.idEpic == subtasks.get(subtaskNumber).idEpic) {
+                sizeSubtaskEpic += 1;
+                if (subtask1.status.equals("DONE")) {
+                    sizeSubtaskDONE += 1;
                 }
             }
         }
-    }
-
-    void updateStatusTask(Task task, String status) {
-        task.status = status;
-    }
-
-    void updateStatusSubtask(Subtask subtask, String status) {
-        subtask.status = status;
-        for (Epic epic : subtasksAndEpics.keySet()) {
-            int size = subtasksAndEpics.get(epic).size();
-            for (Subtask sub : subtasksAndEpics.get(epic)) {
-                if (sub == null) {
-                    size -= 1;
-                }
-                if ((sub != null) && (sub.status.equals("DONE"))) {
-                    epic.status = "IN_PROGRESS";
-                    size -= 1;
-                }
-                if (size == 0) {
-                    epic.status = "DONE";
-                }
-            }
+        if (sizeSubtaskDONE == sizeSubtaskEpic) {
+            epics.get(subtasks.get(subtaskNumber).idEpic).status = "DONE";
+        } else if ((sizeSubtaskDONE < sizeSubtaskEpic) && (sizeSubtaskDONE > 0)) {
+            epics.get(subtasks.get(subtaskNumber).idEpic).status = "IN_PROGRESS";
         }
     }
 }

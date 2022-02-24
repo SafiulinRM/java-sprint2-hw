@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 public class Subtask extends Task {
     String subtaskName;
-    ArrayList<Subtask> subtasks;
+    int idEpic;
 
-    public Subtask(String name) {
+    public Subtask(String name, int idEpic) {
         super();
         this.subtaskName = name;
-        subtasks = new ArrayList<>();
+        this.idEpic = idEpic;
     }
 }
