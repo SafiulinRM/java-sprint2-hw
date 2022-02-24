@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Manager {
@@ -6,7 +5,6 @@ public class Manager {
     protected HashMap<Integer, Task> tasks = new HashMap<>();
     protected HashMap<Integer, Epic> epics = new HashMap<>();
     protected HashMap<Integer, Subtask> subtasks = new HashMap<>();
-    private int idCounterEpic;
 
     void createEpic(Epic epic) {
         idCounter += 1;
@@ -76,10 +74,6 @@ public class Manager {
                 System.out.println(idSubtask + " " + subtasks.get(idSubtask).subtaskName + " " + subtasks.get(idSubtask).status);
             }
         }
-    }
-
-    void q() {
-        System.out.println(subtasks.get(2).idEpic);
     }
 
     void getAll() {
