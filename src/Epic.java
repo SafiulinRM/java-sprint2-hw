@@ -1,8 +1,6 @@
 public class Epic extends Task {
-    String epicName;
 
-    public Epic(String name) {
+    public Epic() {
         super();
-        this.epicName = name;
     }
 }
