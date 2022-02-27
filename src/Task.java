@@ -1,12 +1,29 @@
 public class Task {
     private String name;
-    int id = 0;
-    Status status = Status.NEW;
+    private static int counterId = 1;
+    private int id = 0;
+    private Status status;
 
-    enum Status {
-        NEW,
-        IN_PROGRESS,
-        DONE
+    public Task(String name, Status status) {
+        setId();
+        setName(name);
+        setStatus(status);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId() {
+        id = counterId++;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public String getName() {
