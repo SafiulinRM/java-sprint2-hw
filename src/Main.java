@@ -1,24 +1,19 @@
 public class Main {
     public static void main(String[] args) {
         Manager manager = new Manager();
-        Epic buyCar = new Epic();
-        buyCar.setName("Покупка Машины");
-        Subtask saveMoney = new Subtask(buyCar.id);
-        saveMoney.setName("Накопить денег");
-        Subtask goToCarDealership = new Subtask(buyCar.id);
-        goToCarDealership.setName("Пойти в автосалон");
+        Epic buyCar = new Epic("Покупка Машины", Status.NEW);
+        Subtask saveMoney = new Subtask("Накопить денег", Status.NEW, buyCar.getId());
+        Subtask goToCarDealership = new Subtask("Пойти в автосалон", Status.NEW, buyCar.getId());
         manager.createEpic(buyCar);
-        manager.createSubtask(saveMoney, buyCar.id);
-        manager.createSubtask(goToCarDealership, buyCar.id);
-        Epic moving = new Epic();
-        moving.setName("Переезд");
-        Subtask packBackpack = new Subtask(moving.id);
-        packBackpack.setName("Собрать рюкзак");
+        manager.createSubtask(saveMoney);
+        manager.createSubtask(goToCarDealership);
+        Epic moving = new Epic("Переезд", Status.NEW);
+        Subtask packBackpack = new Subtask("Собрать рюкзак", Status.NEW, moving.getId());
         manager.createEpic(moving);
-        manager.createSubtask(packBackpack, moving.id);
+        manager.createSubtask(packBackpack);
         manager.getAll();
-        manager.updateStatusSubtask(3, Task.Status.DONE);
-        manager.updateStatusSubtask(5, Task.Status.DONE);
+        manager.updateStatusSubtask(3, Status.DONE);
+        manager.updateStatusSubtask(5, Status.DONE);
         manager.getAll();
         manager.removeSubtask(3);
         manager.removeEpic(4);
