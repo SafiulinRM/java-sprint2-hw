@@ -11,12 +11,12 @@ public class Main {
         Subtask packBackpack = new Subtask("Собрать рюкзак", Status.NEW, moving.getId());
         manager.createEpic(moving);
         manager.createSubtask(packBackpack);
-        manager.getAll();
+        manager.printAllTasksAndEpicsAndSubtasks();
         manager.updateStatusSubtask(3, Status.DONE);
         manager.updateStatusSubtask(5, Status.DONE);
-        manager.getAll();
+        manager.printAllTasksAndEpicsAndSubtasks();
         manager.removeSubtask(3);
         manager.removeEpic(4);
-        manager.getAll();
+        manager.printAllTasksAndEpicsAndSubtasks();
     }
 }

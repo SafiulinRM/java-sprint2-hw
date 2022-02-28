@@ -74,7 +74,7 @@ public class Manager {
         return subtasksOfEpic;
     }
 
-    public void getAll() {
+    public void printAllTasksAndEpicsAndSubtasks() {
         printAllTask();
         printAllEpic();
     }
