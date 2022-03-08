@@ -1,36 +1,12 @@
-public class Task {
+public class Task extends StandardTask {
     private String name;
     private static int counterId = 1;
     private int id = 0;
     private Status status;
 
     public Task(String name, Status status) {
-        setId();
-        setName(name);
-        setStatus(status);
+        super(name, status);
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId() {
-        id = counterId++;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
