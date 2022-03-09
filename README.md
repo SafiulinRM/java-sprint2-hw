@@ -24,5 +24,5 @@ Second sprint homework
    передавать разное количество подзадач. В итоге у меня только может быть 2 подзадачи в каждом эпике,
    из за этого есть корявый код моментами.)
 ```java
-   HashMap<Epic, ArrayList<Subtask>> subtasksAndEpics = new HashMap<>();
+   HashMap<model.Epic, ArrayList<model.Subtask>> subtasksAndEpics = new HashMap<>();
 ```

@@ -1,19 +1,22 @@
-public abstract class StandardTask {
+package model;
+
+import service.IdGenerator;
+import service.Status;
+
+public abstract class AbstractTask {
+    IdGenerator idGenerator = new IdGenerator();
+
+    private int newId = idGenerator.generate();
     private String name;
-    private static int counterId = 1;
-    private int id = 0;
     private Status status;
-    public StandardTask(String name, Status status) {
-        setId();
+
+    public AbstractTask(String name, Status status) {
         setName(name);
         setStatus(status);
     }
-    public int getId() {
-        return id;
-    }
 
-    public void setId() {
-        id = counterId++;
+    public int getId() {
+        return newId;
     }
 
     public Status getStatus() {

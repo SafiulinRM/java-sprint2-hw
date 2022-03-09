@@ -1,4 +1,8 @@
-import java.util.List;
+package service;
+
+import model.Epic;
+import model.Subtask;
+import model.Task;
 
 public interface TaskManager {
     void createEpic(Epic epic);
@@ -21,12 +25,5 @@ public interface TaskManager {
 
     Subtask getSubtask(int id);
 
-    List<StandardTask> getHistory();
-
-    void printAllTasksAndEpicsAndSubtasks();
-
     void updateStatusTask(int taskNumber, Status status);
-
-    void updateStatusSubtask(int subtaskId, Status status);
-
 }

@@ -1,4 +1,8 @@
-public class Subtask extends StandardTask {
+package model;
+
+import service.Status;
+
+public class Subtask extends AbstractTask {
     private int epicId;
 
     public Subtask(String name, Status status, int epicId) {

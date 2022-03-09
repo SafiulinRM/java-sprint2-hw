@@ -1,3 +1,11 @@
+package service;
+
+import model.AbstractTask;
+import model.Epic;
+import model.Subtask;
+import model.Task;
+import service.Status;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
@@ -6,7 +14,23 @@ public class InMemoryTaskManager implements TaskManager {
     private HashMap<Integer, Task> tasks = new HashMap<>();
     private HashMap<Integer, Epic> epics = new HashMap<>();
     private HashMap<Integer, Subtask> subtasks = new HashMap<>();
-    private List<StandardTask> tasksHistory = new ArrayList<>();
+    private List<AbstractTask> tasksHistory = new ArrayList<>();
+
+    public HashMap<Integer, Epic> getEpics() {
+        return epics;
+    }
+
+    public HashMap<Integer, Subtask> getSubtasks() {
+        return subtasks;
+    }
+
+    public List<AbstractTask> getTasksHistory() {
+        return tasksHistory;
+    }
+
+    public HashMap<Integer, Task> getTasks() {
+        return tasks;
+    }
 
     @Override
     public void createEpic(Epic epic) {
@@ -48,9 +72,8 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public Task getTask(int id) {
         if (tasksHistory.size() < 10) {
-        tasksHistory.add(tasks.get(id));
-        }
-        else if (tasksHistory.size() == 10) {
+            tasksHistory.add(tasks.get(id));
+        } else if (tasksHistory.size() == 10) {
             tasksHistory.remove(0);
             tasksHistory.add(tasks.get(id));
         }
@@ -61,8 +84,7 @@ public class InMemoryTaskManager implements TaskManager {
     public Epic getEpic(int id) {
         if (tasksHistory.size() < 10) {
             tasksHistory.add(epics.get(id));
-        }
-        else if (tasksHistory.size() == 10) {
+        } else if (tasksHistory.size() == 10) {
             tasksHistory.remove(0);
             tasksHistory.add(epics.get(id));
         }
@@ -73,44 +95,15 @@ public class InMemoryTaskManager implements TaskManager {
     public Subtask getSubtask(int id) {
         if (tasksHistory.size() < 10) {
             tasksHistory.add(subtasks.get(id));
-        }
-        else if (tasksHistory.size() == 10) {
+        } else if (tasksHistory.size() == 10) {
             tasksHistory.remove(0);
             tasksHistory.add(subtasks.get(id));
         }
         return subtasks.get(id);
     }
 
-    @Override
-    public List<StandardTask> getHistory() {
-        return tasksHistory;
-        }
-
-
-    public void printHistory() {
-        System.out.println("Просмотр истории задач!");
-        for (int i = tasksHistory.size() - 1; i > -1; i--) {
-            System.out.println(tasksHistory.get(i).getName());
-        }
-    }
-
-    private void printAllTask() {
-        for (Integer taskId : tasks.keySet()) {
-            System.out.println(taskId + " " + tasks.get(taskId) + " " + tasks.get(taskId).getStatus());
-        }
-    }
-
-    private void printAllEpic() {
-        for (Integer epicId : epics.keySet()) {
-            System.out.println(epicId + " " + epics.get(epicId).getName() + " " + epics.get(epicId).getStatus());
-            for (StandardTask subtask : getSubtasksOfEpic(epicId)) {
-                System.out.println(subtask.getId() + " " + subtask.getName() + " " + subtask.getStatus());
-            }
-        }
-    }
-
-    private List<StandardTask> getSubtasksOfEpic(int epicId) {
-        List<StandardTask> subtasksOfEpic = new ArrayList<>();
+    private List<AbstractTask> getSubtasksOfEpic(int epicId) {
+        List<AbstractTask> subtasksOfEpic = new ArrayList<>();
         for (Integer idSubtask : subtasks.keySet()) {
             if (subtasks.get(idSubtask).getEpicId() == epicId) {
                 subtasksOfEpic.add(subtasks.get(idSubtask));
@@ -120,17 +113,10 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public void printAllTasksAndEpicsAndSubtasks() {
-        printAllTask();
-        printAllEpic();
-    }
-
-    @Override
     public void updateStatusTask(int taskNumber, Status status) {
         tasks.get(taskNumber).setStatus(status);
     }
 
-    @Override
     public void updateStatusSubtask(int subtaskId, Status status) {
         subtasks.get(subtaskId).setStatus(status);
         int epicSubtaskCounter = 0;
