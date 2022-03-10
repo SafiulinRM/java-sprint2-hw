@@ -4,7 +4,7 @@ import service.Status;
 
 public class Epic extends AbstractTask {
 
-    public Epic(String name, Status status) {
-        super(name, status);
+    public Epic(int newId, String name, Status status) {
+        super(newId, name, status);
     }
 }

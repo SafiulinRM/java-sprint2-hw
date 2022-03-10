@@ -4,14 +4,13 @@ import service.IdGenerator;
 import service.Status;
 
 public abstract class AbstractTask {
-    IdGenerator idGenerator = new IdGenerator();
-
-    private int newId = idGenerator.generate();
+    private int newId;
     private String name;
     private Status status;
 
-    public AbstractTask(String name, Status status) {
-        setName(name);
+    public AbstractTask(int newId, String name, Status status) {
+        this.newId = newId;
+        this.name = name;
         setStatus(status);
     }
 

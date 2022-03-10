@@ -1,21 +1,23 @@
 import model.Epic;
 import model.Subtask;
+import service.IdGenerator;
 import service.InMemoryTaskManager;
 import service.Printer;
 import service.Status;
 
 public class Main {
     public static void main(String[] args) {
+        IdGenerator generator = new IdGenerator();
         InMemoryTaskManager manager = new InMemoryTaskManager();
         Printer printer = new Printer();
-        Epic buyCar = new Epic("Покупка Машины", Status.NEW);
-        Subtask saveMoney = new Subtask("Накопить денег", Status.NEW, buyCar.getId());
-        Subtask goToCarDealership = new Subtask("Пойти в автосалон", Status.NEW, buyCar.getId());
+        Epic buyCar = new Epic(generator.generate(), "Покупка Машины", Status.NEW);
+        Subtask saveMoney = new Subtask(generator.generate(), "Накопить денег", Status.NEW, buyCar.getId());
+        Subtask goToCarDealership = new Subtask(generator.generate(), "Пойти в автосалон", Status.NEW, buyCar.getId());
         manager.createEpic(buyCar);
         manager.createSubtask(saveMoney);
         manager.createSubtask(goToCarDealership);
-        Epic moving = new Epic("Переезд", Status.NEW);
-        Subtask packBackpack = new Subtask("Собрать рюкзак", Status.NEW, moving.getId());
+        Epic moving = new Epic(generator.generate(), "Переезд", Status.NEW);
+        Subtask packBackpack = new Subtask(generator.generate(), "Собрать рюкзак", Status.NEW, moving.getId());
         manager.createEpic(moving);
         manager.createSubtask(packBackpack);
         printer.printTasksAndEpicsAndSubtasks(manager.getTasks(), manager.getEpics(), manager.getSubtasks());

@@ -6,4 +6,6 @@ public class IdGenerator {
     public int generate() {
         return counterId++;
     }
-}
+} 
+
+ 
