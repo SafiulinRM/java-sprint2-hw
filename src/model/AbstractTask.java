@@ -4,18 +4,18 @@ import service.IdGenerator;
 import service.Status;
 
 public abstract class AbstractTask {
-    private int newId;
+    private int id;
     private String name;
     private Status status;
 
-    public AbstractTask(int newId, String name, Status status) {
-        this.newId = newId;
+    public AbstractTask(int id, String name, Status status) {
+        this.id = id;
         this.name = name;
         setStatus(status);
     }
 
     public int getId() {
-        return newId;
+        return id;
     }
 
     public Status getStatus() {

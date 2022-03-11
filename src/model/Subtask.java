@@ -5,8 +5,8 @@ import service.Status;
 public class Subtask extends AbstractTask {
     private int epicId;
 
-    public Subtask(int newId, String name, Status status, int epicId) {
-        super(newId, name, status);
+    public Subtask(int id, String name, Status status, int epicId) {
+        super(id, name, status);
         setEpicId(epicId);
     }
 
