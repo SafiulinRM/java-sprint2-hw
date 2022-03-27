@@ -16,6 +16,8 @@ public class InMemoryTaskManager implements TaskManager {
     private HashMap<Integer, Subtask> subtasks = new HashMap<>();
     private List<AbstractTask> tasksHistory = new ArrayList<>();
 
+    private InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
+
     public HashMap<Integer, Epic> getEpics() {
         return epics;
     }
@@ -50,16 +52,26 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void removeTask(int taskId) {
         tasks.remove(taskId);
+        historyManager.remove(taskId);
     }
 
     @Override
     public void removeEpic(int epicId) {
         epics.remove(epicId);
+        for (Subtask subtask : subtasks.values()) {
+            if (subtask.getEpicId() == epicId) {
+                historyManager.remove(subtask.getId());
+            }
+        }
+        historyManager.remove(epicId);
     }
 
     @Override
     public void removeSubtask(int subtaskId) {
-        subtasks.remove(subtaskId);
+        if (subtasks.containsKey(subtaskId)) {
+            subtasks.remove(subtaskId);
+            historyManager.remove(subtaskId);
+        }
     }
 
     @Override
@@ -77,6 +89,7 @@ public class InMemoryTaskManager implements TaskManager {
             tasksHistory.remove(0);
             tasksHistory.add(tasks.get(id));
         }
+        historyManager.add(tasks.get(id));
         return tasks.get(id);
     }
 
@@ -88,6 +101,7 @@ public class InMemoryTaskManager implements TaskManager {
             tasksHistory.remove(0);
             tasksHistory.add(epics.get(id));
         }
+        historyManager.add(epics.get(id));
         return epics.get(id);
     }
 
@@ -99,6 +113,7 @@ public class InMemoryTaskManager implements TaskManager {
             tasksHistory.remove(0);
             tasksHistory.add(subtasks.get(id));
         }
+        historyManager.add(subtasks.get(id));
         return subtasks.get(id);
     }
 
@@ -135,6 +150,10 @@ public class InMemoryTaskManager implements TaskManager {
         } else if ((epicSubtaskDone < epicSubtaskCounter) && (epicSubtaskDone > 0)) {
             epics.get(subtasks.get(subtaskId).getEpicId()).setStatus(Status.IN_PROGRESS);
         }
+    }
+
+    public List<AbstractTask> getNewHistory() {
+        return historyManager.getHistory();
     }
 }
 
