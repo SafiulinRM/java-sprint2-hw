@@ -4,7 +4,7 @@ import model.AbstractTask;
 import model.Epic;
 import model.Subtask;
 import model.Task;
-import service.Status;
+import model.Status;
 
 import java.util.HashMap;
 import java.util.List;

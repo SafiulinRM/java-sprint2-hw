@@ -1,8 +1,5 @@
 package model;
 
-import service.IdGenerator;
-import service.Status;
-
 public abstract class AbstractTask {
     private int id;
     private String name;
