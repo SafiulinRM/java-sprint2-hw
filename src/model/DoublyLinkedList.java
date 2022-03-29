@@ -6,10 +6,18 @@ import java.util.List;
 import java.util.Map;
 
 public class DoublyLinkedList<E> {
-    public Map<Integer, Node<E>> nodes = new HashMap<>();
+    private Map<Integer, Node<E>> nodes = new HashMap<>();
     public Node<E> head;
     public Node<E> tail;
     private int size = 0;
+
+    public Map<Integer, Node<E>> getNodes() {
+        return nodes;
+    }
+
+    public void removeNodes(int id) {
+        this.nodes.remove(id);
+    }
 
     public void linkLast(AbstractTask task) {
         final Node<E> oldTail = tail;
@@ -26,10 +34,10 @@ public class DoublyLinkedList<E> {
 
     public List<E> getTasks() {
         List<E> tasksHistory = new ArrayList<>();
-        tasksHistory.add(head.data);
+        tasksHistory.add(head.getData());
         Node<E> nextNode = head.next;
         while (!(nextNode == null)) {
-            tasksHistory.add(nextNode.data);
+            tasksHistory.add(nextNode.getData());
             nextNode = nextNode.next;
         }
         return tasksHistory;
@@ -48,5 +56,6 @@ public class DoublyLinkedList<E> {
         }
         node.prev = null;
         node.next = null;
+        nodes.remove(node);
     }
 }

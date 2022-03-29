@@ -17,22 +17,19 @@ public class InMemoryHistoryManager implements HistoryManager {
 
     @Override
     public void add(AbstractTask task) {
-        if (list.nodes.size() == HISTORY_SIZE) {
+        if (list.getNodes().size() == HISTORY_SIZE) {
             list.removeNode(list.head);
-            list.nodes.remove(list.head.data.getId());
         }
-        if (list.nodes.containsKey(task.getId())) {
-            list.removeNode(list.nodes.get(task.getId()));
-            list.nodes.remove(task.getId());
+        if (list.getNodes().containsKey(task.getId())) {
+            list.removeNode(list.getNodes().get(task.getId()));
         }
         list.linkLast(task);
     }
 
     @Override
     public void remove(int id) {
-        if (list.nodes.containsKey(id)) {
-            list.removeNode(list.nodes.get(id));
-            list.nodes.remove(id);
+        if (list.getNodes().containsKey(id)) {
+            list.removeNode(list.getNodes().get(id));
         }
     }
 }
