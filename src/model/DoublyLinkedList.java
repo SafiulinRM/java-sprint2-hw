@@ -7,9 +7,13 @@ import java.util.Map;
 
 public class DoublyLinkedList<E> {
     private Map<Integer, Node<E>> nodes = new HashMap<>();
-    public Node<E> head;
-    public Node<E> tail;
+    private Node<E> head;
+    private Node<E> tail;
     private int size = 0;
+
+    public Node<E> getHead() {
+        return head;
+    }
 
     public Map<Integer, Node<E>> getNodes() {
         return nodes;
@@ -26,36 +30,35 @@ public class DoublyLinkedList<E> {
         if (oldTail == null)
             head = newNode;
         else
-            oldTail.next = newNode;
+            oldTail.setNext(newNode);
         size++;
         nodes.put(task.getId(), newNode);
-
     }
 
     public List<E> getTasks() {
         List<E> tasksHistory = new ArrayList<>();
         tasksHistory.add(head.getData());
-        Node<E> nextNode = head.next;
+        Node<E> nextNode = head.getNext();
         while (!(nextNode == null)) {
             tasksHistory.add(nextNode.getData());
-            nextNode = nextNode.next;
+            nextNode = nextNode.getNext();
         }
         return tasksHistory;
     }
 
     public void removeNode(Node<E> node) {
         if (node == head) {
-            node.next.prev = null;
-            head = node.next;
+            node.getNext().setPrev(null);
+            head = node.getNext();
         } else if (node == tail) {
-            node.prev.next = null;
-            tail = node.prev;
+            node.getPrev().setNext(null);
+            tail = node.getPrev();
         } else {
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
+            node.getPrev().setNext(node.getNext());
+            node.getNext().setPrev(node.getPrev());
         }
-        node.prev = null;
-        node.next = null;
+        node.setPrev(null);
+        node.setNext(null);
         nodes.remove(node);
     }
 }

@@ -18,7 +18,7 @@ public class InMemoryHistoryManager implements HistoryManager {
     @Override
     public void add(AbstractTask task) {
         if (list.getNodes().size() == HISTORY_SIZE) {
-            list.removeNode(list.head);
+            list.removeNode(list.getHead());
         }
         if (list.getNodes().containsKey(task.getId())) {
             list.removeNode(list.getNodes().get(task.getId()));
