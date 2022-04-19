@@ -1,11 +1,15 @@
 package model;
 
+import java.util.Locale;
+
 public class Subtask extends AbstractTask {
     private int epicId;
 
     public Subtask(int id, String name, Status status, int epicId) {
         super(id, name, status);
         setEpicId(epicId);
+        this.setType(Type.SUBTASK);
+        setDescription(getType().toString().toLowerCase(Locale.ROOT) + id);
     }
 
     public int getEpicId() {
@@ -14,5 +18,10 @@ public class Subtask extends AbstractTask {
 
     public void setEpicId(int epicId) {
         this.epicId = epicId;
+    }
+
+    @Override
+    public String toString() {
+        return getId() + "," + getType() + "," + getName() + "," + getStatus() + "," + getDescription() + "," + epicId;
     }
 }

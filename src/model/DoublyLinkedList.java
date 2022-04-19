@@ -31,19 +31,19 @@ public class DoublyLinkedList<E> {
             head = newNode;
         else
             oldTail.setNext(newNode);
-        size++;
+        ++size;
         nodes.put(task.getId(), newNode);
     }
 
     public List<E> getTasks() {
-        List<E> tasksHistory = new ArrayList<>();
-        tasksHistory.add(head.getData());
+        List<E> history = new ArrayList<>();
+        history.add(head.getData());
         Node<E> nextNode = head.getNext();
         while (!(nextNode == null)) {
-            tasksHistory.add(nextNode.getData());
+            history.add(nextNode.getData());
             nextNode = nextNode.getNext();
         }
-        return tasksHistory;
+        return history;
     }
 
     public void removeNode(Node<E> node) {

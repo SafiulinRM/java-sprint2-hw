@@ -11,12 +11,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class InMemoryTaskManager implements TaskManager {
-    private HashMap<Integer, Task> tasks = new HashMap<>();
-    private HashMap<Integer, Epic> epics = new HashMap<>();
-    private HashMap<Integer, Subtask> subtasks = new HashMap<>();
-    private List<AbstractTask> tasksHistory = new ArrayList<>();
-
-    private InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
+    protected static HashMap<Integer, Task> tasks = new HashMap<>();
+    protected static HashMap<Integer, Epic> epics = new HashMap<>();
+    protected static HashMap<Integer, Subtask> subtasks = new HashMap<>();
+    protected static HistoryManager historyManager = Managers.getDefaultHistory();
 
     public HashMap<Integer, Epic> getEpics() {
         return epics;
@@ -24,10 +22,6 @@ public class InMemoryTaskManager implements TaskManager {
 
     public HashMap<Integer, Subtask> getSubtasks() {
         return subtasks;
-    }
-
-    public List<AbstractTask> getTasksHistory() {
-        return tasksHistory;
     }
 
     public HashMap<Integer, Task> getTasks() {
@@ -83,36 +77,18 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public Task getTask(int id) {
-        if (tasksHistory.size() < 10) {
-            tasksHistory.add(tasks.get(id));
-        } else if (tasksHistory.size() == 10) {
-            tasksHistory.remove(0);
-            tasksHistory.add(tasks.get(id));
-        }
         historyManager.add(tasks.get(id));
         return tasks.get(id);
     }
 
     @Override
     public Epic getEpic(int id) {
-        if (tasksHistory.size() < 10) {
-            tasksHistory.add(epics.get(id));
-        } else if (tasksHistory.size() == 10) {
-            tasksHistory.remove(0);
-            tasksHistory.add(epics.get(id));
-        }
         historyManager.add(epics.get(id));
         return epics.get(id);
     }
 
     @Override
     public Subtask getSubtask(int id) {
-        if (tasksHistory.size() < 10) {
-            tasksHistory.add(subtasks.get(id));
-        } else if (tasksHistory.size() == 10) {
-            tasksHistory.remove(0);
-            tasksHistory.add(subtasks.get(id));
-        }
         historyManager.add(subtasks.get(id));
         return subtasks.get(id);
     }
@@ -155,6 +131,7 @@ public class InMemoryTaskManager implements TaskManager {
     public List<AbstractTask> getNewHistory() {
         return historyManager.getHistory();
     }
+
 }
 
 

@@ -2,7 +2,10 @@ package service;
 
 import model.AbstractTask;
 import model.DoublyLinkedList;
+import model.Node;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
@@ -13,6 +16,26 @@ public class InMemoryHistoryManager implements HistoryManager {
     @Override
     public List<AbstractTask> getHistory() {
         return list.getTasks();
+    }
+
+    public static String toString(HistoryManager manager) {
+        String text = "";
+        for (AbstractTask task : manager.getHistory()) {
+            if (!text.isBlank())
+                text = text + "," + task.getId();
+            else
+                text = text + task.getId();
+        }
+        return text;
+    }
+
+    static List<Integer> fromString(String value) {
+        List<Integer> ids = new ArrayList<>();
+        String[] split = value.split(",");
+        for (String id : split) {
+            ids.add(Integer.parseInt(id));
+        }
+        return ids;
     }
 
     @Override

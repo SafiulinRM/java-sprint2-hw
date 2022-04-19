@@ -4,6 +4,8 @@ public abstract class AbstractTask {
     private int id;
     private String name;
     private Status status;
+    private String description;
+    private Type type;
 
     public AbstractTask(int id, String name, Status status) {
         this.id = id;
@@ -31,12 +33,24 @@ public abstract class AbstractTask {
         this.name = name;
     }
 
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
-        return "AbstractTask{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", status=" + status +
-                '}';
+        return id + "," + type + "," + name + "," + status + "," + description + ",";
     }
 }
