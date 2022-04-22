@@ -15,6 +15,14 @@ import java.util.List;
 public class FileBackedTasksManagerLoader {
     private static final int FIELDS_COUNT = 6;
     private static final int CHARACTERS_PER_LINE = 3;
+    private static final String TYPE_SUBTASK = "SUBTASK";
+    private static final String TYPE_TASK = "TASK";
+    private static final String TYPE_EPIC = "EPIC";
+    private static final String TASK_DELIMITER = ",";
+    private static final int INDEX_ID = 0;
+    private static final int INDEX_NAME = 2;
+    private static final int INDEX_STATUS = 3;
+    private static final int INDEX_EPIC_ID = 5;
 
     public static FileBackedTasksManager loadFromFile(File file) {
         FileBackedTasksManager test = new FileBackedTasksManager(file);
@@ -24,11 +32,11 @@ public class FileBackedTasksManagerLoader {
             while (br.ready()) {
                 String line = br.readLine();
                 if (line.length() > FIELDS_COUNT) {
-                    if (line.contains("SUBTASK"))
+                    if (line.contains(TYPE_SUBTASK))
                         test.subtasks.put(fromStringSubtask(line).getId(), fromStringSubtask(line));
-                    else if (line.contains("EPIC"))
+                    else if (line.contains(TYPE_EPIC))
                         test.epics.put(fromStringEpic(line).getId(), fromStringEpic(line));
-                    else if (line.contains("TASK"))
+                    else if (line.contains(TYPE_TASK))
                         test.tasks.put(fromStringTask(line).getId(), fromStringTask(line));
                 } else if (line.length() == CHARACTERS_PER_LINE) {
                     for (Integer id : (fromString(line))) {
@@ -49,24 +57,24 @@ public class FileBackedTasksManagerLoader {
     }
 
     static Task fromStringTask(String value) {
-        String[] split = value.split(",");
-        return new Task(Integer.parseInt(split[0]), split[2], Status.valueOf(split[3]));
+        String[] split = value.split(TASK_DELIMITER);
+        return new Task(Integer.parseInt(split[INDEX_ID]), split[INDEX_NAME], Status.valueOf(split[INDEX_STATUS]));
     }
 
     static Epic fromStringEpic(String value) {
-        String[] split = value.split(",");
-        return new Epic(Integer.parseInt(split[0]), split[2], Status.valueOf(split[3]));
+        String[] split = value.split(TASK_DELIMITER);
+        return new Epic(Integer.parseInt(split[INDEX_ID]), split[INDEX_NAME], Status.valueOf(split[INDEX_STATUS]));
     }
 
     static Subtask fromStringSubtask(String value) {
-        String[] split = value.split(",");
-        return new Subtask(Integer.parseInt(split[0]), split[2], Status.valueOf(split[3]),
-                Integer.parseInt(split[5]));
+        String[] split = value.split(TASK_DELIMITER);
+        return new Subtask(Integer.parseInt(split[INDEX_ID]), split[INDEX_NAME], Status.valueOf(split[INDEX_STATUS]),
+                Integer.parseInt(split[INDEX_EPIC_ID]));
     }
 
     static List<Integer> fromString(String value) {
         List<Integer> ids = new ArrayList<>();
-        String[] split = value.split(",");
+        String[] split = value.split(TASK_DELIMITER);
         for (String id : split) {
             ids.add(Integer.parseInt(id));
         }

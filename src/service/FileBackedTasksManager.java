@@ -3,10 +3,11 @@ package service;
 import model.*;
 
 import java.io.*;
+import java.util.List;
 
 public class FileBackedTasksManager extends InMemoryTaskManager {
     private final File file;
-    private static final String LINE_DELIMETER = "\n";
+    private static final String LINE_DELIMITER = "\n";
     private static final int TYPE_COLUMN_INDEX = 0;
 
     public FileBackedTasksManager(File file) {
@@ -16,24 +17,36 @@ public class FileBackedTasksManager extends InMemoryTaskManager {
     private void save() throws ManagerSaveException {
         try (Writer fileWriter = new FileWriter(file.getName())) {
             for (AbstractTask task : getTasks().values()) {
-                fileWriter.write(task.toString() + LINE_DELIMETER);
+                fileWriter.write(task.toString() + LINE_DELIMITER);
             }
             for (Epic epic : getEpics().values()) {
-                fileWriter.write(epic.toString() + LINE_DELIMETER);
+                fileWriter.write(epic.toString() + LINE_DELIMITER);
             }
             for (AbstractTask task : getSubtasks().values()) {
-                fileWriter.write(task.toString() + LINE_DELIMETER);
+                fileWriter.write(task.toString() + LINE_DELIMITER);
             }
-            fileWriter.write(LINE_DELIMETER);
+            fileWriter.write(LINE_DELIMITER);
             try {
                 if (getNewHistory().size() > TYPE_COLUMN_INDEX) {
-                    fileWriter.write(InMemoryHistoryManager.toString(historyManager));
+                    String historyLine = createHistoryString(historyManager.getHistory());
+                    fileWriter.write(historyLine);
                 }
             } catch (Exception e) {
             }
         } catch (IOException e) {
             throw new ManagerSaveException();
         }
+    }
+
+    public String createHistoryString(List<AbstractTask> history) {
+        String text = "";
+        for (AbstractTask task : history) {
+            if (!text.isBlank())
+                text = text + "," + task.getId();
+            else
+                text = text + task.getId();
+        }
+        return text;
     }
 
     @Override

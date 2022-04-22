@@ -15,17 +15,6 @@ public class InMemoryHistoryManager implements HistoryManager {
         return list.getTasks();
     }
 
-    public static String toString(HistoryManager manager) {
-        String text = "";
-        for (AbstractTask task : manager.getHistory()) {
-            if (!text.isBlank())
-                text = text + "," + task.getId();
-            else
-                text = text + task.getId();
-        }
-        return text;
-    }
-
     @Override
     public void add(AbstractTask task) {
         if (list.getNodes().size() == HISTORY_SIZE) {
