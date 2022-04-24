@@ -1,0 +1,7 @@
+1,EPIC,Покупка Машины,NEW,epic1,
+5,EPIC,Переезд,NEW,epic5,
+2,SUBTASK,Накопить денег,NEW,subtask2,1
+3,SUBTASK,Пойти в автосалон,NEW,subtask3,1
+4,SUBTASK,Купить колеса,NEW,subtask4,1
+
+2,3
