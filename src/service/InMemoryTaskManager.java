@@ -6,25 +6,49 @@ import model.Subtask;
 import model.Task;
 import model.Status;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 public class InMemoryTaskManager implements TaskManager {
+
+    Comparator<AbstractTask> comparator = (o1, o2) -> {
+        if (o1.getStartTime().getYear() != o2.getStartTime().getYear()) {
+            return o1.getStartTime().getYear() - o2.getStartTime().getYear();
+        } else if (o1.getStartTime().getMonth() != o2.getStartTime().getMonth()) {
+            return o1.getStartTime().getMonthValue() - o2.getStartTime().getMonthValue();
+        } else if (o1.getStartTime().getDayOfYear() != o2.getStartTime().getDayOfYear()) {
+            return (o1.getStartTime().getDayOfYear() - o2.getStartTime().getDayOfYear());
+        } else if (o1.getStartTime().getHour() != o2.getStartTime().getHour()) {
+            return (o1.getStartTime().getHour() - o2.getStartTime().getHour());
+        } else if (o1.getStartTime().getMinute() != o2.getStartTime().getMinute()) {
+            return (o1.getStartTime().getMinute() - o2.getStartTime().getMinute());
+        } else {
+            return 0;
+        }
+    };
+
     protected static HashMap<Integer, Task> tasks = new HashMap<>();
     protected static HashMap<Integer, Epic> epics = new HashMap<>();
     protected static HashMap<Integer, Subtask> subtasks = new HashMap<>();
     protected static HistoryManager historyManager = Managers.getDefaultHistory();
+    protected Set<AbstractTask> prioritizedTasks = new TreeSet<>(comparator);
 
-    public HashMap<Integer, Epic> getEpics() {
+    @Override
+    public Set<AbstractTask> getPrioritizedTasks() {
+        return prioritizedTasks;
+    }
+
+    @Override
+    public Map<Integer, Epic> getEpics() {
         return epics;
     }
 
-    public HashMap<Integer, Subtask> getSubtasks() {
+    @Override
+    public Map<Integer, Subtask> getSubtasks() {
         return subtasks;
     }
 
-    public HashMap<Integer, Task> getTasks() {
+    @Override
+    public Map<Integer, Task> getTasks() {
         return tasks;
     }
 
@@ -35,12 +59,42 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public void createSubtask(Subtask subtask) {
-        subtasks.put(subtask.getId(), subtask);
+        boolean intersection = true;
+        for (AbstractTask task : getPrioritizedTasks()) {
+            if (task.getStartTime().equals(subtask.getStartTime())) {
+                intersection = false;
+                break;
+            }
+        }
+        if (intersection) {
+            subtasks.put(subtask.getId(), subtask);
+            epics.get(subtask.getEpicId()).setDuration(subtask.getDuration());
+            epics.get(subtask.getEpicId()).setEndTime(subtask.getEndTime());
+            if (epics.get(subtask.getEpicId()).getStartTime() == null) {
+                epics.get(subtask.getEpicId()).setStartTime(subtask.getStartTime());
+            }
+            prioritizedTasks.add(subtask);
+            updateStatusSubtask(subtask.getId(), subtask.getStatus());
+        } else {
+            System.out.println("Пересечение времени");
+        }
     }
 
     @Override
     public void createTask(Task task) {
-        tasks.put(task.getId(), task);
+        boolean intersection = true;
+        for (AbstractTask t : getPrioritizedTasks()) {
+            if (t.getStartTime().equals(task.getStartTime())) {
+                intersection = false;
+                break;
+            }
+        }
+        if (intersection) {
+            tasks.put(task.getId(), task);
+            prioritizedTasks.add(task);
+        } else {
+            System.out.println("Пересечение времени");
+        }
     }
 
     @Override
@@ -73,6 +127,7 @@ public class InMemoryTaskManager implements TaskManager {
         tasks.clear();
         epics.clear();
         subtasks.clear();
+        historyManager.removeAll();
     }
 
     @Override
@@ -93,7 +148,8 @@ public class InMemoryTaskManager implements TaskManager {
         return subtasks.get(id);
     }
 
-    private List<AbstractTask> getSubtasksOfEpic(int epicId) {
+    @Override
+    public List<AbstractTask> getSubtasksOfEpic(int epicId) {
         List<AbstractTask> subtasksOfEpic = new ArrayList<>();
         for (Integer idSubtask : subtasks.keySet()) {
             if (subtasks.get(idSubtask).getEpicId() == epicId) {
@@ -105,13 +161,19 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public void updateStatusTask(int taskNumber, Status status) {
+        prioritizedTasks.remove(tasks.get(taskNumber));
         tasks.get(taskNumber).setStatus(status);
+        prioritizedTasks.add(tasks.get(taskNumber));
     }
 
+    @Override
     public void updateStatusSubtask(int subtaskId, Status status) {
+        prioritizedTasks.remove(subtasks.get(subtaskId));
         subtasks.get(subtaskId).setStatus(status);
+        prioritizedTasks.add(subtasks.get(subtaskId));
         int epicSubtaskCounter = 0;
         int epicSubtaskDone = 0;
+        boolean epicSubtaskInProgress = false;
 
         for (Subtask subtask : subtasks.values()) {
             if (subtask.getEpicId() == subtasks.get(subtaskId).getEpicId()) {
@@ -119,19 +181,22 @@ public class InMemoryTaskManager implements TaskManager {
                 if (subtask.getStatus().equals(Status.DONE)) {
                     epicSubtaskDone += 1;
                 }
+                if (subtask.getStatus().equals(Status.IN_PROGRESS)) {
+                    epicSubtaskInProgress = true;
+                }
             }
         }
         if (epicSubtaskDone == epicSubtaskCounter) {
             epics.get(subtasks.get(subtaskId).getEpicId()).setStatus(Status.DONE);
-        } else if ((epicSubtaskDone < epicSubtaskCounter) && (epicSubtaskDone > 0)) {
+        } else if (((epicSubtaskDone < epicSubtaskCounter) && (epicSubtaskDone > 0)) || epicSubtaskInProgress) {
             epics.get(subtasks.get(subtaskId).getEpicId()).setStatus(Status.IN_PROGRESS);
         }
     }
 
+    @Override
     public List<AbstractTask> getNewHistory() {
         return historyManager.getHistory();
     }
-
 }
 
 

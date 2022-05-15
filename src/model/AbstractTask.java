@@ -1,16 +1,33 @@
 package model;
 
+import java.time.LocalDateTime;
+import java.util.Objects;
+
 public abstract class AbstractTask {
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
     private Status status;
     private String description;
     private Type type;
+    protected long duration = 0;
+    protected LocalDateTime startTime;
 
-    public AbstractTask(int id, String name, Status status) {
+    protected AbstractTask(int id, String name, Status status) {
         this.id = id;
         this.name = name;
         setStatus(status);
+    }
+
+    public LocalDateTime getEndTime() {
+        return startTime.plusMinutes(duration);
+    }
+
+    public long getDuration() {
+        return duration;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
     }
 
     public int getId() {
@@ -29,9 +46,6 @@ public abstract class AbstractTask {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setType(Type type) {
         this.type = type;
@@ -51,6 +65,22 @@ public abstract class AbstractTask {
 
     @Override
     public String toString() {
-        return id + "," + type + "," + name + "," + status + "," + description + ",";
+        return id + "," + type + "," + name + "," + status + "," + description + "," + duration + "," + startTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractTask that = (AbstractTask) o;
+        return id == that.id && duration == that.duration && Objects.equals(name, that.name) && status == that.status && Objects.equals(description, that.description) && type == that.type && Objects.equals(startTime, that.startTime);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + id;
+        result = 31 * result + id;
+        return result;
     }
 }

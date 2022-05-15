@@ -6,5 +6,9 @@ public class IdGenerator {
     public int generate() {
         return ++counterId;
     }
+
+    public static void setCounterId(int counterId) {
+        IdGenerator.counterId = counterId;
+    }
 } 
 

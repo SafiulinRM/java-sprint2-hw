@@ -19,9 +19,12 @@ public class DoublyLinkedList<E> {
         return nodes;
     }
 
-    public void removeNodes(int id) {
-        this.nodes.remove(id);
+    public void removeNodes() {
+        nodes.clear();
+        head = null;
+        tail = null;
     }
+
 
     public void linkLast(AbstractTask task) {
         final Node<E> oldTail = tail;
@@ -37,28 +40,39 @@ public class DoublyLinkedList<E> {
 
     public List<E> getTasks() {
         List<E> history = new ArrayList<>();
-        history.add(head.getData());
-        Node<E> nextNode = head.getNext();
-        while (!(nextNode == null)) {
-            history.add(nextNode.getData());
-            nextNode = nextNode.getNext();
+        if (head != null) {
+            history.add(head.getData());
+            Node<E> nextNode = head.getNext();
+            while (!(nextNode == null)) {
+                history.add(nextNode.getData());
+                nextNode = nextNode.getNext();
+            }
+            return history;
+        } else {
+            return history;
         }
-        return history;
     }
 
-    public void removeNode(Node<E> node) {
-        if (node == head) {
-            node.getNext().setPrev(null);
-            head = node.getNext();
-        } else if (node == tail) {
-            node.getPrev().setNext(null);
-            tail = node.getPrev();
+    public void removeNode(Node<E> node, int id) {
+        if ((nodes.size() == 1)) {
+            head = null;
+            tail = null;
+            size = 0;
+            nodes.clear();
         } else {
-            node.getPrev().setNext(node.getNext());
-            node.getNext().setPrev(node.getPrev());
+            if (node == head) {
+                node.getNext().setPrev(null);
+                head = node.getNext();
+            } else if (node == tail) {
+                node.getPrev().setNext(null);
+                tail = node.getPrev();
+            } else {
+                node.getPrev().setNext(node.getNext());
+                node.getNext().setPrev(node.getPrev());
+            }
+            node.setPrev(null);
+            node.setNext(null);
+            nodes.remove(id);
         }
-        node.setPrev(null);
-        node.setNext(null);
-        nodes.remove(node);
     }
 }

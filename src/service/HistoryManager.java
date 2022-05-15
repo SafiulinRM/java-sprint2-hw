@@ -10,4 +10,7 @@ public interface HistoryManager {
     void add(AbstractTask task);
 
     void remove(int id);
+
+    void removeAll();
+
 }

@@ -6,15 +6,12 @@ import java.io.*;
 import java.util.List;
 
 public class FileBackedTasksManager extends InMemoryTaskManager {
-    private final File file;
+    private final File file = new File("C:\\Users\\User\\java-sprint2-hw\\src", "save.txt");
     private static final String LINE_DELIMITER = "\n";
     private static final int TYPE_COLUMN_INDEX = 0;
 
-    public FileBackedTasksManager(File file) {
-        this.file = file;
-    }
 
-    private void save() throws ManagerSaveException {
+    protected void save() throws ManagerSaveException {
         try (Writer fileWriter = new FileWriter(file.getName())) {
             for (AbstractTask task : getTasks().values()) {
                 fileWriter.write(task.toString() + LINE_DELIMITER);
