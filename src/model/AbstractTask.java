@@ -3,13 +3,13 @@ package model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public abstract class AbstractTask {
+public abstract class AbstractTask implements Comparable<AbstractTask> {
     private final int id;
     private final String name;
     private Status status;
     private String description;
     private Type type;
-    protected long duration = 0;
+    protected long durationMs = 0;
     protected LocalDateTime startTime;
 
     protected AbstractTask(int id, String name, Status status) {
@@ -18,12 +18,44 @@ public abstract class AbstractTask {
         setStatus(status);
     }
 
+    @Override
+    public int compareTo(AbstractTask o) {
+        if (this.getStartTime().getYear() != o.getStartTime().getYear()) {
+
+            return this.getStartTime().getYear() - o.getStartTime().getYear();
+
+        } else if (this.getStartTime().getMonth() != o.getStartTime().getMonth()) {
+
+            return this.getStartTime().getMonthValue() - o.getStartTime().getMonthValue();
+
+        } else if (this.getStartTime().getDayOfYear() != o.getStartTime().getDayOfYear()) {
+
+            return (this.getStartTime().getDayOfYear() - o.getStartTime().getDayOfYear());
+
+        } else if (this.getStartTime().getHour() != o.getStartTime().getHour()) {
+
+            return (this.getStartTime().getHour() - o.getStartTime().getHour());
+
+        } else if (this.getStartTime().getMinute() != o.getStartTime().getMinute()) {
+
+            return (this.getStartTime().getMinute() - o.getStartTime().getMinute());
+
+        } else {
+
+            return 0;
+
+        }
+
+    }
+
+    ;
+
     public LocalDateTime getEndTime() {
-        return startTime.plusMinutes(duration);
+        return startTime.plusMinutes(durationMs);
     }
 
     public long getDuration() {
-        return duration;
+        return durationMs;
     }
 
     public LocalDateTime getStartTime() {
@@ -65,7 +97,7 @@ public abstract class AbstractTask {
 
     @Override
     public String toString() {
-        return id + "," + type + "," + name + "," + status + "," + description + "," + duration + "," + startTime;
+        return id + "," + type + "," + name + "," + status + "," + description + "," + durationMs + "," + startTime;
     }
 
     @Override
@@ -73,7 +105,7 @@ public abstract class AbstractTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AbstractTask that = (AbstractTask) o;
-        return id == that.id && duration == that.duration && Objects.equals(name, that.name) && status == that.status && Objects.equals(description, that.description) && type == that.type && Objects.equals(startTime, that.startTime);
+        return id == that.id && durationMs == that.durationMs && Objects.equals(name, that.name) && status == that.status && Objects.equals(description, that.description) && type == that.type && Objects.equals(startTime, that.startTime);
     }
 
     @Override

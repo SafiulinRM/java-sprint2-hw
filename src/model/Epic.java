@@ -21,8 +21,8 @@ public class Epic extends AbstractTask {
         this.endTime = endTime;
     }
 
-    public void setDuration(long duration) {
-        this.duration += duration;
+    public void setDuration(long durationMs) {
+        this.durationMs += durationMs;
     }
 
     public void setStartTime(LocalDateTime startTime) {

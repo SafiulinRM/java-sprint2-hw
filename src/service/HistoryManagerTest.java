@@ -6,15 +6,16 @@ import model.Subtask;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HistoryManagerTest {
-
-    IdGenerator generator = new IdGenerator();
-    FileBackedTasksManager manager = new FileBackedTasksManager();
-    Epic epic = new Epic(generator.generate(), "epic", Status.NEW);
+    private File file = new File("save.txt");
+    private IdGenerator generator = new IdGenerator();
+    private FileBackedTasksManager manager = new FileBackedTasksManager(file);
+    private Epic epic;
 
     @BeforeEach
     public void beforeEach() {
@@ -62,36 +63,29 @@ class HistoryManagerTest {
 
     @Test
     void shouldFifthTaskIsEpic6IfRemoveFifthTask() {
-        Epic epic2 = new Epic(generator.generate(), "epic", Status.NEW);
-        Epic epic3 = new Epic(generator.generate(), "epic", Status.NEW);
+        Subtask subtask2 = new Subtask(generator.generate(), "Накопить денег", Status.NEW, 100,
+                LocalDateTime.of(2022, 6, 1, 0, 0), epic.getId());
+        Subtask subtask3 = new Subtask(generator.generate(), "Пойти в автосалон", Status.NEW, 50,
+                LocalDateTime.of(2022, 6, 2, 0, 0), epic.getId());
         Epic epic4 = new Epic(generator.generate(), "epic", Status.NEW);
-        Epic epic5 = new Epic(generator.generate(), "epic", Status.NEW);
-        Epic epic6 = new Epic(generator.generate(), "epic", Status.NEW);
-        Epic epic7 = new Epic(generator.generate(), "epic", Status.NEW);
-        Epic epic8 = new Epic(generator.generate(), "epic", Status.NEW);
-        Epic epic9 = new Epic(generator.generate(), "epic", Status.NEW);
-        Epic epic10 = new Epic(generator.generate(), "epic", Status.NEW);
-        manager.createEpic(epic2);
-        manager.createEpic(epic3);
+        Subtask subtask5 = new Subtask(generator.generate(), "Накопить денег", Status.NEW, 100,
+                LocalDateTime.of(2022, 6, 3, 0, 0), epic4.getId());
+        Subtask subtask6 = new Subtask(generator.generate(), "Пойти в автосалон", Status.NEW, 50,
+                LocalDateTime.of(2022, 6, 4, 0, 0), epic4.getId());
+        manager.createSubtask(subtask2);
+        manager.createSubtask(subtask3);
         manager.createEpic(epic4);
-        manager.createEpic(epic5);
-        manager.createEpic(epic6);
-        manager.createEpic(epic7);
-        manager.createEpic(epic8);
-        manager.createEpic(epic9);
-        manager.createEpic(epic10);
-        manager.getEpic(2);
-        manager.getEpic(3);
+        manager.createSubtask(subtask5);
+        manager.createSubtask(subtask6);
+        manager.getEpic(1);
+        manager.getSubtask(2);
+        manager.getSubtask(3);
         manager.getEpic(4);
-        manager.getEpic(5);
-        manager.getEpic(6);
-        manager.getEpic(7);
-        manager.getEpic(8);
-        manager.getEpic(9);
-        manager.getEpic(10);
-        assertEquals(epic6, manager.getNewHistory().get(4), "Задачи не совпадают.");
-        manager.removeEpic(5);
-        assertEquals(epic7, manager.getNewHistory().get(4), "Задачи не совпадают.");
+        manager.getSubtask(5);
+        manager.getSubtask(6);
+        assertEquals(subtask5, manager.getNewHistory().get(4), "Задачи не совпадают.");
+        manager.removeSubtask(5);
+        assertEquals(subtask6, manager.getNewHistory().get(4), "Задачи не совпадают.");
     }
 
     @Test
