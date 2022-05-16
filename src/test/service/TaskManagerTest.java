@@ -1,8 +1,10 @@
-package service;
+package test.service;
 
 import model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import service.IdGenerator;
+import service.TaskManager;
 
 import java.io.File;
 import java.time.LocalDateTime;

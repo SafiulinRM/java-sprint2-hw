@@ -15,7 +15,7 @@ public class FileBackedTasksManager extends InMemoryTaskManager {
     }
 
 
-    protected void save() throws ManagerSaveException {
+    public void save() throws ManagerSaveException {
         try (Writer fileWriter = new FileWriter(file.getName())) {
             for (AbstractTask task : getTasks().values()) {
                 fileWriter.write(task.toString() + LINE_DELIMITER);
