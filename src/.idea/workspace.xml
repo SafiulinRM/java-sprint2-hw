@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="fix &quot;Роман С добавил тесты&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/AbstractTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/AbstractTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Epic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/EpicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/EpicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ManagerSaveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/ManagerSaveException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Subtask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/AbstractTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/AbstractTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Epic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Epic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Subtask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Subtask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManagerLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManagerLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryHistoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryHistoryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryTaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryTaskManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManagerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManagerLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/HistoryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/HistoryManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/InMemoryTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/TaskManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/TaskManagerTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/service/FileBackedTasksManagerLoader.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26uublcDGlUfOYkZITzXm89NN5V" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="abstract class TaskManagerTest&lt;T extends TaskManager&gt;" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="service" />
+      <recent name="model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.FileBackedTasksManagerTest.saveOnlyEpicsInManager">
+    <configuration name="FileBackedTasksManager" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.FileBackedTasksManager" />
+      <module name="java-sprint2-hw" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.model" />
+      <option name="MAIN_CLASS_NAME" value="test.model.EpicTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileBackedTasksManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.FileBackedTasksManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileBackedTasksManagerTest.saveOnlyEpicsInManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.FileBackedTasksManagerTest" />
+      <option name="METHOD_NAME" value="saveOnlyEpicsInManager" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HistoryManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.HistoryManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InMemoryTaskManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.InMemoryTaskManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FileBackedTasksManagerTest.saveOnlyEpicsInManager" />
+        <item itemvalue="JUnit.FileBackedTasksManagerTest" />
+        <item itemvalue="JUnit.InMemoryTaskManagerTest" />
+        <item itemvalue="JUnit.EpicTest" />
+        <item itemvalue="JUnit.HistoryManagerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="" />
+      <created>1648285866093</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648285866093</updated>
+    </task>
+    <task id="LOCAL-00001" summary="feat &quot;Роман С добавил новую историю&quot;">
+      <created>1648396783489</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648396783489</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix &quot;Роман С переставил классы в другие пакеты&quot;">
+      <created>1648485897031</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648485897031</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix &quot;Роман С поменял модификаторы на приват&quot;">
+      <created>1648564842729</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648564842729</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat &quot;Роман С добавил память&quot;">
+      <created>1650400247260</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650400247260</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat &quot;Роман С добавил память&quot;">
+      <created>1650400396548</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650400396548</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat &quot;Роман С добавил память&quot;">
+      <created>1650400417421</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650400417421</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix &quot;Роман С исправил модификаторы, перенес статики&quot;">
+      <created>1650549991469</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650549991469</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix &quot;Роман С добавил постоянные, убрал метод toString&quot;">
+      <created>1650628414850</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650628414850</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix &quot;Роман С добавил постоянные, убрал метод toString&quot;">
+      <created>1650806382580</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650806382580</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix &quot;Роман С добавил тесты&quot;">
+      <created>1652607578179</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652607578179</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat &quot;Роман С добавил новую историю&quot;" />
+    <MESSAGE value="fix &quot;Роман С переставил классы в другие пакеты&quot;" />
+    <MESSAGE value="fix &quot;Роман С поменял модификаторы на приват&quot;" />
+    <MESSAGE value="feat &quot;Роман С добавил память&quot;" />
+    <MESSAGE value="fix &quot;Роман С исправил модификаторы, перенес статики&quot;" />
+    <MESSAGE value="fix &quot;Роман С добавил постоянные, убрал метод toString&quot;" />
+    <MESSAGE value="fix &quot;Роман С добавил тесты&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix &quot;Роман С добавил тесты&quot;" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/src$Main.ic" NAME="Main Coverage Results" MODIFIED="1650386221657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/src$EpicTest.ic" NAME="EpicTest Coverage Results" MODIFIED="1652372463666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/src$FileBackedTasksManagerTest.ic" NAME="FileBackedTasksManagerTest Coverage Results" MODIFIED="1652606872930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/src$EpicTest_shouldCalculateStatusNewAllSubtasksNew.ic" NAME="EpicTest.shouldCalculateStatusNewAllSubtasksNew Coverage Results" MODIFIED="1652377568717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.*</FILTER>
+    </SUITE>
+  </component>
+</project>

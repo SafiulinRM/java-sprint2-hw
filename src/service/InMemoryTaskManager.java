@@ -10,27 +10,11 @@ import java.util.*;
 
 public class InMemoryTaskManager implements TaskManager {
 
-    Comparator<AbstractTask> comparator = (o1, o2) -> {
-        if (o1.getStartTime().getYear() != o2.getStartTime().getYear()) {
-            return o1.getStartTime().getYear() - o2.getStartTime().getYear();
-        } else if (o1.getStartTime().getMonth() != o2.getStartTime().getMonth()) {
-            return o1.getStartTime().getMonthValue() - o2.getStartTime().getMonthValue();
-        } else if (o1.getStartTime().getDayOfYear() != o2.getStartTime().getDayOfYear()) {
-            return (o1.getStartTime().getDayOfYear() - o2.getStartTime().getDayOfYear());
-        } else if (o1.getStartTime().getHour() != o2.getStartTime().getHour()) {
-            return (o1.getStartTime().getHour() - o2.getStartTime().getHour());
-        } else if (o1.getStartTime().getMinute() != o2.getStartTime().getMinute()) {
-            return (o1.getStartTime().getMinute() - o2.getStartTime().getMinute());
-        } else {
-            return 0;
-        }
-    };
-
     protected static HashMap<Integer, Task> tasks = new HashMap<>();
     protected static HashMap<Integer, Epic> epics = new HashMap<>();
     protected static HashMap<Integer, Subtask> subtasks = new HashMap<>();
     protected static HistoryManager historyManager = Managers.getDefaultHistory();
-    protected Set<AbstractTask> prioritizedTasks = new TreeSet<>(comparator);
+    protected Set<AbstractTask> prioritizedTasks = new TreeSet<>();
 
     @Override
     public Set<AbstractTask> getPrioritizedTasks() {

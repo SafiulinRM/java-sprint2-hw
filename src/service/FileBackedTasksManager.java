@@ -6,9 +6,13 @@ import java.io.*;
 import java.util.List;
 
 public class FileBackedTasksManager extends InMemoryTaskManager {
-    private final File file = new File("C:\\Users\\User\\java-sprint2-hw\\src", "save.txt");
+    private final File file;
     private static final String LINE_DELIMITER = "\n";
     private static final int TYPE_COLUMN_INDEX = 0;
+
+    public FileBackedTasksManager(File file) {
+        this.file = file;
+    }
 
 
     protected void save() throws ManagerSaveException {
@@ -29,21 +33,22 @@ public class FileBackedTasksManager extends InMemoryTaskManager {
                     fileWriter.write(historyLine);
                 }
             } catch (Exception e) {
+                e.getMessage();
             }
         } catch (IOException e) {
-            throw new ManagerSaveException();
+            throw new ManagerSaveException(e.getMessage(), e);
         }
     }
 
     public String createHistoryString(List<AbstractTask> history) {
-        String text = "";
+        StringBuilder text = new StringBuilder();
         for (AbstractTask task : history) {
-            if (!text.isBlank())
-                text = text + "," + task.getId();
+            if (!text.toString().isBlank())
+                text.append("," + task.getId());
             else
-                text = text + task.getId();
+                text.append(task.getId());
         }
-        return text;
+        return text.toString();
     }
 
     @Override

@@ -28,35 +28,32 @@ public class FileBackedTasksManagerLoader {
     private static final int INDEX_START_TIME = 6;
 
     public static FileBackedTasksManager loadFromFile(File file) {
-        FileBackedTasksManager test = new FileBackedTasksManager();
-        try {
-            FileReader reader = new FileReader(file);
-            BufferedReader br = new BufferedReader(reader);
+        FileBackedTasksManager fileBackedTasksManagerNew = new FileBackedTasksManager(file);
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             while (br.ready()) {
                 String line = br.readLine();
                 if (line.length() > FIELDS_COUNT) {
                     if (line.contains(TYPE_SUBTASK))
-                        test.createSubtask(fromStringSubtask(line));
+                        fileBackedTasksManagerNew.createSubtask(fromStringSubtask(line));
                     else if (line.contains(TYPE_EPIC))
-                        test.epics.put(fromStringEpic(line).getId(), fromStringEpic(line));
+                        fileBackedTasksManagerNew.epics.put(fromStringEpic(line).getId(), fromStringEpic(line));
                     else if (line.contains(TYPE_TASK))
-                        test.createTask(fromStringTask(line));
+                        fileBackedTasksManagerNew.createTask(fromStringTask(line));
                 } else if (line.length() > CHARACTERS_PER_LINE) {
                     for (Integer id : (fromString(line))) {
-                        if (test.tasks.containsKey(id))
-                            test.getTask(id);
-                        else if (test.epics.containsKey(id))
-                            test.getEpic(id);
-                        else if (test.subtasks.containsKey(id))
-                            test.getSubtask(id);
+                        if (fileBackedTasksManagerNew.tasks.containsKey(id))
+                            fileBackedTasksManagerNew.getTask(id);
+                        else if (fileBackedTasksManagerNew.epics.containsKey(id))
+                            fileBackedTasksManagerNew.getEpic(id);
+                        else if (fileBackedTasksManagerNew.subtasks.containsKey(id))
+                            fileBackedTasksManagerNew.getSubtask(id);
                     }
                 }
             }
-            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return test;
+        return fileBackedTasksManagerNew;
     }
 
     static Task fromStringTask(String value) {

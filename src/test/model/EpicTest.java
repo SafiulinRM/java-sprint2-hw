@@ -1,18 +1,23 @@
-package model;
+package test.model;
 
+import model.Epic;
+import model.Status;
+import model.Subtask;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.FileBackedTasksManager;
 import service.IdGenerator;
 
+import java.io.File;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EpicTest {
-    IdGenerator generator = new IdGenerator();
-    FileBackedTasksManager manager = new FileBackedTasksManager();
-    Epic epic = new Epic(generator.generate(), "epic", Status.NEW);
+public class EpicTest {
+    private File file = new File("save.txt");
+    private IdGenerator generator = new IdGenerator();
+    private FileBackedTasksManager manager = new FileBackedTasksManager(file);
+    private Epic epic;
 
     @BeforeEach
     public void beforeEach() {

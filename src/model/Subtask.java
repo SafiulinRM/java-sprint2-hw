@@ -7,9 +7,9 @@ import java.util.Locale;
 public class Subtask extends AbstractTask {
     private int epicId;
 
-    public Subtask(int id, String name, Status status, long duration, LocalDateTime startTime, int epicId) {
+    public Subtask(int id, String name, Status status, long durationMs, LocalDateTime startTime, int epicId) {
         super(id, name, status);
-        this.duration = duration;
+        this.durationMs = durationMs;
         this.startTime = startTime;
         setEpicId(epicId);
         this.setType(Type.SUBTASK);
