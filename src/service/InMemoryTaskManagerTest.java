@@ -1,6 +1,5 @@
-package test.service;
+package service;
 
-import service.InMemoryTaskManager;
 
 class InMemoryTaskManagerTest extends TaskManagerTest<InMemoryTaskManager> {
 

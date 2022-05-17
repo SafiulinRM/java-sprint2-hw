@@ -2,32 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="fix &quot;Роман С добавил тесты&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AbstractTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/AbstractTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Epic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/EpicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/EpicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ManagerSaveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/ManagerSaveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Subtask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/FileBackedTasksManagerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/HistoryManagerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/InMemoryTaskManagerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/TaskManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/2/6/266c5375a6a096a3d1684074f482771478332053" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/2/e/2ed108884332e9f77a3c17dedfce478a14d6ca9b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/5/d/5d6fd494b66b11cfcdbb264075cb0cbfafde8773" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/5/d/5d6fd494b66b11cfcdbb264075cb0cbfafde8773" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/e/3/e3d7b7d1e952f6bb17f4f39e223966397164cbbb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/e/3/e3d7b7d1e952f6bb17f4f39e223966397164cbbb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/AbstractTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/AbstractTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Epic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Epic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Subtask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Subtask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Task.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManagerLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManagerLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryHistoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryHistoryManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryTaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryTaskManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManagerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManagerLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/HistoryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/HistoryManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/InMemoryTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/TaskManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/TaskManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +37,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--tags" />
@@ -105,7 +96,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EpicTest">
+  <component name="RunManager" selected="JUnit.HistoryManagerTest">
     <configuration name="FileBackedTasksManager" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="service.FileBackedTasksManager" />
       <module name="java-sprint2-hw" />
@@ -191,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EpicTest" />
         <item itemvalue="JUnit.HistoryManagerTest" />
-        <item itemvalue="JUnit.InMemoryTaskManagerTest" />
         <item itemvalue="JUnit.FileBackedTasksManagerTest" />
-        <item itemvalue="JUnit.FileBackedTasksManagerTest.saveOnlyEpicsInManager" />
+        <item itemvalue="JUnit.InMemoryTaskManagerTest" />
+        <item itemvalue="JUnit.EpicTest" />
+        <item itemvalue="JUnit.InMemoryTaskManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +269,28 @@
       <option name="project" value="LOCAL" />
       <updated>1652607578179</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix &quot;Роман С добавил тесты&quot;">
+      <created>1652715005135</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652715005135</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix &quot;Роман С добавил тесты&quot;">
+      <created>1652715024160</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652715024160</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix &quot;Роман С добавил тесты&quot;">
+      <created>1652715265785</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652715265785</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +313,7 @@
     <MESSAGE value="fix &quot;Роман С добавил постоянные, убрал метод toString&quot;" />
     <MESSAGE value="fix &quot;Роман С добавил тесты&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="fix &quot;Роман С добавил тесты&quot;" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/src$Main.ic" NAME="Main Coverage Results" MODIFIED="1650386221657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

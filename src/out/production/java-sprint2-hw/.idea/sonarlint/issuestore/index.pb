@@ -1,23 +1,35 @@
 
-Y
-)service/FileBackedTasksManagerLoader.java,5\d\5d6fd494b66b11cfcdbb264075cb0cbfafde8773
-?
-model/Node.java,5\7\57716c462936e8d497c2e44c1362d55697cb24c8
-8
-save.txt,2\e\2ed108884332e9f77a3c17dedfce478a14d6ca9b
-?
-model/Task.java,1\1\114b8a8b25a5fedc9949a4a20e2729fae2ba184a
-G
-model/AbstractTask.java,e\3\e3d7b7d1e952f6bb17f4f39e223966397164cbbb
-K
-model/DoublyLinkedList.java,8\c\8ca70d450a98cbafd834127a1c4651195ef12cd8
-H
-service/IdGenerator.java,8\7\87653b94a6455e02c794e0fd1ea532ba309e05d1
-K
-service/HistoryManager.java,5\1\51882b1baceedb19e46035d122abb1305d8abe95
+A
+model/Status.java,1\4\14bd53f1206b9f23d6c8ecc275f4138ad09c4495
 E
 service/Managers.java,1\5\151196c745d3ec237ae4a32e66b4ab540f84e683
+C
+java-sprint2-hw.iml,d\d\dd86aa360b270d32ce750cd9f6b0370a4b4495d6
+K
+model/DoublyLinkedList.java,8\c\8ca70d450a98cbafd834127a1c4651195ef12cd8
+K
+service/HistoryManager.java,5\1\51882b1baceedb19e46035d122abb1305d8abe95
+H
+service/IdGenerator.java,8\7\87653b94a6455e02c794e0fd1ea532ba309e05d1
 S
 #service/InMemoryHistoryManager.java,1\7\17ef9dde5ecb6233b03e883706d845669d1ba2d7
-C
-model/EpicTest.java,2\6\266c5375a6a096a3d1684074f482771478332053
+9
+	Main.java,6\9\69cdb079609ed3ce1e356d44cff508330a5787c4
+H
+service/TaskManager.java,3\4\34d71080924f8219f4d6544ac40819db633e8f95
+Y
+)service/FileBackedTasksManagerLoader.java,5\d\5d6fd494b66b11cfcdbb264075cb0cbfafde8773
+G
+model/AbstractTask.java,e\3\e3d7b7d1e952f6bb17f4f39e223966397164cbbb
+?
+model/Epic.java,8\2\822e7916feddcb95a7d4c61f475bbd8683a5a60a
+P
+ service/InMemoryTaskManager.java,8\d\8d8f9a8e3c27f6c4538dcb4b6b72e97241d78244
+O
+model/ManagerSaveException.java,f\2\f22a16a688ce19a155be7c3c566c50747e67a5ae
+?
+model/Node.java,5\7\57716c462936e8d497c2e44c1362d55697cb24c8
+B
+model/Subtask.java,7\7\7795ff1be160da326d3bb602f079cc3b86fcb6fc
+?
+model/Task.java,1\1\114b8a8b25a5fedc9949a4a20e2729fae2ba184a
