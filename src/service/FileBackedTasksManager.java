@@ -6,14 +6,13 @@ import java.io.*;
 import java.util.List;
 
 public class FileBackedTasksManager extends InMemoryTaskManager {
-    private final File file;
     private static final String LINE_DELIMITER = "\n";
     private static final int TYPE_COLUMN_INDEX = 0;
+    private final File file;
 
     public FileBackedTasksManager(File file) {
         this.file = file;
     }
-
 
     public void save() throws ManagerSaveException {
         try (Writer fileWriter = new FileWriter(file.getName())) {

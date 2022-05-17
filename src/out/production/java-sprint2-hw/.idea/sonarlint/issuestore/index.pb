@@ -33,3 +33,9 @@ B
 model/Subtask.java,7\7\7795ff1be160da326d3bb602f079cc3b86fcb6fc
 ?
 model/Task.java,1\1\114b8a8b25a5fedc9949a4a20e2729fae2ba184a
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+S
+#service/FileBackedTasksManager.java,1\b\1b2a52d43242e46383a76bd8b55091a3965e4c75
+O
+service/HistoryManagerTest.java,e\a\eab5491b5bbe7b9c7769c9c96fd48e7fe39232f5
