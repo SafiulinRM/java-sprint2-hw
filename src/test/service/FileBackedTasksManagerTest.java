@@ -11,9 +11,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FileBackedTasksManagerTest extends TaskManagerTest<FileBackedTasksManager> {
 
-    public FileBackedTasksManagerTest(File file) {
-        super(new FileBackedTasksManager(file));
-    }
+    public static final File FILE = new File("save.txt");
+
+    public FileBackedTasksManagerTest() {
+        super(new FileBackedTasksManager(FILE));}
 
     @Test
     void saveEmptyManager() {

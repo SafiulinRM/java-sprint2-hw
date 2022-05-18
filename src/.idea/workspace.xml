@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="fix &quot;Роман С добавил тесты&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/model/EpicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/model/EpicTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/FileBackedTasksManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/HistoryManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/InMemoryTaskManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/TaskManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/InMemoryTaskManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/InMemoryTaskManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/TaskManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/TaskManagerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/TaskManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/TaskManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/model/EpicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/EpicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +93,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileBackedTasksManagerTest and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.service" />
+      <option name="MAIN_CLASS_NAME" value="test.service.TaskManagerTest" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="test.service.FileBackedTasksManagerTest" />
+        <pattern testClass="test.service.InMemoryTaskManagerTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileBackedTasksManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-sprint2-hw" />
       <extension name="coverage">
@@ -127,22 +138,6 @@
       <option name="PACKAGE_NAME" value="test.service" />
       <option name="MAIN_CLASS_NAME" value="test.service.FileBackedTasksManagerTest" />
       <option name="METHOD_NAME" value="saveEmptyManager" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileBackedTasksManagerTest.saveOnlyEpicsInManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-sprint2-hw" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.service" />
-      <option name="MAIN_CLASS_NAME" value="test.service.FileBackedTasksManagerTest" />
-      <option name="METHOD_NAME" value="saveOnlyEpicsInManager" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,10 +176,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FileBackedTasksManagerTest" />
-        <item itemvalue="JUnit.FileBackedTasksManagerTest.saveEmptyManager" />
-        <item itemvalue="JUnit.FileBackedTasksManagerTest" />
-        <item itemvalue="JUnit.FileBackedTasksManagerTest" />
+        <item itemvalue="JUnit.FileBackedTasksManagerTest and 1 more" />
         <item itemvalue="JUnit.InMemoryTaskManagerTest" />
+        <item itemvalue="JUnit.HistoryManagerTest" />
+        <item itemvalue="JUnit.FileBackedTasksManagerTest.saveEmptyManager" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652797089359</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix &quot;Роман С добавил тесты&quot;">
+      <created>1652804235125</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652804235125</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
