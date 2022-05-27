@@ -10,8 +10,9 @@ public class FileBackedTasksManager extends InMemoryTaskManager {
     private static final int TYPE_COLUMN_INDEX = 0;
     private final File file;
 
-    public FileBackedTasksManager(File file) {
-        this.file = file;
+    public FileBackedTasksManager(String fileName) {
+        file = new File(fileName);
+        ;
     }
 
     public void save() throws ManagerSaveException {

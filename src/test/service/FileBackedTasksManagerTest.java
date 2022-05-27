@@ -11,10 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FileBackedTasksManagerTest extends TaskManagerTest<FileBackedTasksManager> {
 
-    public static final File FILE = new File("save.txt");
+    public static final String fileName = "save.txt";
 
     public FileBackedTasksManagerTest() {
-        super(new FileBackedTasksManager(FILE));}
+        super(new FileBackedTasksManager(fileName));
+    }
 
     @Test
     void saveEmptyManager() {
@@ -42,7 +43,7 @@ class FileBackedTasksManagerTest extends TaskManagerTest<FileBackedTasksManager>
         Epic epic = new Epic(generator.generate(), NAME, Status.NEW);
         manager.createEpic(epic);
         manager.getEpic(1);
-        FileBackedTasksManager testOnlyEpicInHistory = FileBackedTasksManagerLoader.loadFromFile(file);
+        FileBackedTasksManager testOnlyEpicInHistory = FileBackedTasksManagerLoader.loadFromFile(fileName);
         assertEquals(epic, testOnlyEpicInHistory.getEpic(1), TASK_NOT_CREATE);
         assertEquals(1, testOnlyEpicInHistory.getNewHistory().size());
     }
@@ -55,7 +56,7 @@ class FileBackedTasksManagerTest extends TaskManagerTest<FileBackedTasksManager>
         manager.createSubtask(subtask);
         Task task = new Task(generator.generate(), NAME, Status.NEW, DURATION_MS, START_TIME_2);
         manager.createTask(task);
-        FileBackedTasksManager testEmptyHistory = FileBackedTasksManagerLoader.loadFromFile(file);
+        FileBackedTasksManager testEmptyHistory = FileBackedTasksManagerLoader.loadFromFile(fileName);
         assertEquals(0, testEmptyHistory.getNewHistory().size());
     }
 

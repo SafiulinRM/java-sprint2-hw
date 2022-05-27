@@ -20,9 +20,9 @@ public class EpicTest {
     public static final long DURATION = 100;
     public static final LocalDateTime START_TIME_ONE = LocalDateTime.of(2022, 6, 1, 0, 0);
     public static final LocalDateTime START_TIME_TWO = LocalDateTime.of(2022, 6, 2, 0, 0);
-    private File file = new File("save.txt");
+    private String fileName = "save.txt";
     private IdGenerator generator = new IdGenerator();
-    private FileBackedTasksManager manager = new FileBackedTasksManager(file);
+    private FileBackedTasksManager manager = new FileBackedTasksManager(fileName);
 
     @BeforeEach
     public void beforeEach() {

@@ -1,13 +1,0 @@
-
-O
-java:S1118":Add a private constructor to hide the implicit public one.(Èîÿ[
-h
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(•õº¸
-P
-java:S2209'"5Change this instance-reference to a static reference.(şÎ°ıÿÿÿÿ
-P
-java:S2209,"5Change this instance-reference to a static reference.(•¿Æşùÿÿÿÿ
-K
-java:S2209."5Change this instance-reference to a static reference.(øûÁ¸
-K
-java:S22090"5Change this instance-reference to a static reference.(½À–ë

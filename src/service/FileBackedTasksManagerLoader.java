@@ -27,9 +27,9 @@ public class FileBackedTasksManagerLoader {
     private static final int INDEX_DURATION = 5;
     private static final int INDEX_START_TIME = 6;
 
-    public static FileBackedTasksManager loadFromFile(File file) {
-        FileBackedTasksManager fileBackedTasksManagerNew = new FileBackedTasksManager(file);
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+    public static FileBackedTasksManager loadFromFile(String fileName) {
+        FileBackedTasksManager fileBackedTasksManagerNew = new FileBackedTasksManager(fileName);
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             while (br.ready()) {
                 String line = br.readLine();
                 if (line.length() > FIELDS_COUNT) {

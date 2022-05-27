@@ -73,7 +73,7 @@ abstract class TaskManagerTest<T extends TaskManager> {
         manager.createEpic(epic);
         assertEquals(epic, manager.getEpic(1), TASK_NOT_CREATE);
         manager.removeEpic(1);
-        assertThrows(NullPointerException.class, () -> manager.getEpic(1), TASK_NOT_REMOVE);
+        assertEquals(0, manager.getEpics().size(), TASK_NOT_REMOVE);
     }
 
     @Test
@@ -84,7 +84,7 @@ abstract class TaskManagerTest<T extends TaskManager> {
         manager.createSubtask(subtask);
         assertEquals(subtask, manager.getSubtask(2), TASK_NOT_CREATE);
         manager.removeSubtask(2);
-        assertThrows(NullPointerException.class, () -> manager.getSubtask(2), TASK_NOT_REMOVE);
+        assertEquals(0, manager.getSubtasks().size(), TASK_NOT_REMOVE);
     }
 
     @Test
@@ -98,8 +98,8 @@ abstract class TaskManagerTest<T extends TaskManager> {
         manager.createTask(task);
         assertEquals(task, manager.getTask(3), TASK_NOT_CREATE);
         manager.removeAll();
-        assertThrows(NullPointerException.class, () -> manager.getEpic(1), TASK_NOT_REMOVE);
-        assertThrows(NullPointerException.class, () -> manager.getSubtask(2), TASK_NOT_REMOVE);
+        assertEquals(0, manager.getEpics().size(), TASK_NOT_REMOVE);
+        assertEquals(0, manager.getSubtasks().size(), TASK_NOT_REMOVE);
         assertThrows(NullPointerException.class, () -> manager.getTask(3), TASK_NOT_REMOVE);
     }
 
@@ -216,9 +216,7 @@ abstract class TaskManagerTest<T extends TaskManager> {
         assertEquals(subtask3, manager.getSubtask(3), TASK_NOT_CREATE);
         assertEquals(3, manager.getNewHistory().size(), HISTORY_WRONG);
         manager.removeSubtask(2);
-        assertThrows(NullPointerException.class, () -> manager.getSubtask(2), TASK_NOT_REMOVE);
         manager.removeSubtask(3);
-        assertThrows(NullPointerException.class, () -> manager.getSubtask(3), TASK_NOT_REMOVE);
         assertEquals(1, manager.getNewHistory().size(), HISTORY_WRONG);
     }
 }

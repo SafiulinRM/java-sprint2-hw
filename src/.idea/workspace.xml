@@ -2,11 +2,82 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="fix &quot;Роман С добавил тесты&quot;">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/7795ff1be160da326d3bb602f079cc3b86fcb6fc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/822e7916feddcb95a7d4c61f475bbd8683a5a60a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dd86aa360b270d32ce750cd9f6b0370a4b4495d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/HttpTaskServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/KVServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.9.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/AbstractElementAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/HTTPTaskManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/KVTaskClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/api/HttpTaskServerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/service/HTTPTaskManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../save.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/InMemoryTaskManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/InMemoryTaskManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/TaskManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/TaskManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-sprint2-hw.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-sprint2-hw.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/AbstractTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/AbstractTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/1/1/114b8a8b25a5fedc9949a4a20e2729fae2ba184a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/1/5/151196c745d3ec237ae4a32e66b4ab540f84e683" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/1/7/17ef9dde5ecb6233b03e883706d845669d1ba2d7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/14bd53f1206b9f23d6c8ecc275f4138ad09c4495" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/5/1/51882b1baceedb19e46035d122abb1305d8abe95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/5/7/57716c462936e8d497c2e44c1362d55697cb24c8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/5/d/5d6fd494b66b11cfcdbb264075cb0cbfafde8773" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/8/7/87653b94a6455e02c794e0fd1ea532ba309e05d1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/87653b94a6455e02c794e0fd1ea532ba309e05d1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/8/c/8ca70d450a98cbafd834127a1c4651195ef12cd8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/e/3/e3d7b7d1e952f6bb17f4f39e223966397164cbbb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/java-sprint2-hw.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/apiguardian-api-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/junit-jupiter-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/junit-jupiter-api-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/junit-jupiter-engine-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/junit-jupiter-params-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/junit-platform-commons-1.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/junit-platform-engine-1.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/lib/opentest4j-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/AbstractTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/DoublyLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Epic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/ManagerSaveException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Subtask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/model/Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/save.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/FileBackedTasksManagerLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/HistoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/IdGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryHistoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/InMemoryTaskManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/Managers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/TaskManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/model/EpicTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/FileBackedTasksManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/HistoryManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/InMemoryTaskManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/TaskManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/FileBackedTasksManagerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/FileBackedTasksManagerLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/InMemoryTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/Managers.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/Managers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/EpicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/model/EpicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/service/FileBackedTasksManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/FileBackedTasksManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/service/HistoryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/HistoryManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/service/TaskManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/TaskManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +91,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,6 +129,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -85,7 +157,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FileBackedTasksManagerTest">
+  <component name="RunManager" selected="JUnit.EpicTest">
     <configuration name="FileBackedTasksManager" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="service.FileBackedTasksManager" />
       <module name="java-sprint2-hw" />
@@ -93,7 +165,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileBackedTasksManagerTest and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="java-sprint2-hw" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.model" />
+      <option name="MAIN_CLASS_NAME" value="test.model.EpicTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileBackedTasksManagerTest and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-sprint2-hw" />
       <extension name="coverage">
         <pattern>
@@ -106,39 +200,9 @@
       <option name="TEST_OBJECT" value="pattern" />
       <patterns>
         <pattern testClass="test.service.FileBackedTasksManagerTest" />
+        <pattern testClass="test.service.HTTPTaskManagerTest" />
         <pattern testClass="test.service.InMemoryTaskManagerTest" />
       </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileBackedTasksManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-sprint2-hw" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.service" />
-      <option name="MAIN_CLASS_NAME" value="test.service.FileBackedTasksManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileBackedTasksManagerTest.saveEmptyManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-sprint2-hw" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.service" />
-      <option name="MAIN_CLASS_NAME" value="test.service.FileBackedTasksManagerTest" />
-      <option name="METHOD_NAME" value="saveEmptyManager" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,16 +222,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InMemoryTaskManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpTaskServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-sprint2-hw" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.service.*" />
+          <option name="PATTERN" value="test.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.service" />
-      <option name="MAIN_CLASS_NAME" value="test.service.InMemoryTaskManagerTest" />
+      <option name="PACKAGE_NAME" value="test.api" />
+      <option name="MAIN_CLASS_NAME" value="test.api.HttpTaskServerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,11 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileBackedTasksManagerTest" />
-        <item itemvalue="JUnit.FileBackedTasksManagerTest and 1 more" />
-        <item itemvalue="JUnit.InMemoryTaskManagerTest" />
+        <item itemvalue="JUnit.EpicTest" />
         <item itemvalue="JUnit.HistoryManagerTest" />
-        <item itemvalue="JUnit.FileBackedTasksManagerTest.saveEmptyManager" />
+        <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
+        <item itemvalue="JUnit.HttpTaskServerTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652804235125</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix &quot;Роман С добавил тесты&quot;">
+      <created>1652883252980</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1652883252980</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,6 +390,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat &quot;Роман С добавил новую историю&quot;" />
     <MESSAGE value="fix &quot;Роман С переставил классы в другие пакеты&quot;" />
     <MESSAGE value="fix &quot;Роман С поменял модификаторы на приват&quot;" />
@@ -328,6 +400,17 @@
     <MESSAGE value="fix &quot;Роман С добавил тесты&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="fix &quot;Роман С добавил тесты&quot;" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api/HttpTaskServer.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/src$Main.ic" NAME="Main Coverage Results" MODIFIED="1650386221657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

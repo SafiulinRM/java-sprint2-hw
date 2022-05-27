@@ -8,15 +8,14 @@ import org.junit.jupiter.api.Test;
 import service.FileBackedTasksManager;
 import service.IdGenerator;
 
-import java.io.File;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HistoryManagerTest {
-    private File file = new File("save.txt");
+    private String fileName = "save.txt";
     private IdGenerator generator = new IdGenerator();
-    private FileBackedTasksManager manager = new FileBackedTasksManager(file);
+    private FileBackedTasksManager manager = new FileBackedTasksManager(fileName);
     private Epic epic;
 
     @BeforeEach

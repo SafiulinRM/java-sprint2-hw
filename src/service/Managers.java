@@ -1,12 +1,12 @@
 package service;
 
 public class Managers {
-    private static TaskManager taskManager;
+    private static HTTPTaskManager taskManager;
     private static HistoryManager historyManager;
 
-    public static TaskManager getDefault() {
+    public static HTTPTaskManager getDefault() {
         if (taskManager == null) {
-            taskManager = new InMemoryTaskManager();
+            taskManager = new HTTPTaskManager("http://localhost:8078/register");
         }
         return taskManager;
     }

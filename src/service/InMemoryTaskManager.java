@@ -43,41 +43,49 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public void createSubtask(Subtask subtask) {
-        boolean intersection = true;
-        for (AbstractTask task : getPrioritizedTasks()) {
-            if (task.getStartTime().equals(subtask.getStartTime())) {
-                intersection = false;
-                break;
-            }
-        }
-        if (intersection) {
-            subtasks.put(subtask.getId(), subtask);
-            epics.get(subtask.getEpicId()).setDuration(subtask.getDuration());
-            epics.get(subtask.getEpicId()).setEndTime(subtask.getEndTime());
-            if (epics.get(subtask.getEpicId()).getStartTime() == null) {
-                epics.get(subtask.getEpicId()).setStartTime(subtask.getStartTime());
-            }
-            prioritizedTasks.add(subtask);
+        if (subtasks.containsKey(subtask.getId())) {
             updateStatusSubtask(subtask.getId(), subtask.getStatus());
         } else {
-            System.out.println("Пересечение времени");
+            boolean intersection = true;
+            for (AbstractTask task : getPrioritizedTasks()) {
+                if (task.getStartTime().equals(subtask.getStartTime())) {
+                    intersection = false;
+                    break;
+                }
+            }
+            if (intersection) {
+                subtasks.put(subtask.getId(), subtask);
+                epics.get(subtask.getEpicId()).setDuration(subtask.getDuration());
+                epics.get(subtask.getEpicId()).setEndTime(subtask.getEndTime());
+                if (epics.get(subtask.getEpicId()).getStartTime() == null) {
+                    epics.get(subtask.getEpicId()).setStartTime(subtask.getStartTime());
+                }
+                prioritizedTasks.add(subtask);
+                updateStatusSubtask(subtask.getId(), subtask.getStatus());
+            } else {
+                System.out.println("Пересечение времени");
+            }
         }
     }
 
     @Override
     public void createTask(Task task) {
-        boolean intersection = true;
-        for (AbstractTask t : getPrioritizedTasks()) {
-            if (t.getStartTime().equals(task.getStartTime())) {
-                intersection = false;
-                break;
-            }
-        }
-        if (intersection) {
-            tasks.put(task.getId(), task);
-            prioritizedTasks.add(task);
+        if (tasks.containsKey(task.getId())) {
+            updateStatusTask(task.getId(), task.getStatus());
         } else {
-            System.out.println("Пересечение времени");
+            boolean intersection = true;
+            for (AbstractTask t : getPrioritizedTasks()) {
+                if (t.getStartTime().equals(task.getStartTime())) {
+                    intersection = false;
+                    break;
+                }
+            }
+            if (intersection) {
+                tasks.put(task.getId(), task);
+                prioritizedTasks.add(task);
+            } else {
+                System.out.println("Пересечение времени");
+            }
         }
     }
 
@@ -112,6 +120,7 @@ public class InMemoryTaskManager implements TaskManager {
         epics.clear();
         subtasks.clear();
         historyManager.removeAll();
+        prioritizedTasks.clear();
     }
 
     @Override
@@ -182,6 +191,3 @@ public class InMemoryTaskManager implements TaskManager {
         return historyManager.getHistory();
     }
 }
-
-
-

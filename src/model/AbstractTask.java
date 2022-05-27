@@ -43,12 +43,8 @@ public abstract class AbstractTask implements Comparable<AbstractTask> {
         } else {
 
             return 0;
-
         }
-
     }
-
-    ;
 
     public LocalDateTime getEndTime() {
         return startTime.plusMinutes(durationMs);
