@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="fix &quot;Роман С ремонт кода&quot;">
+    <list default="true" id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="fix &quot;Роман С добавил тесты&quot;">
+      <change afterPath="$PROJECT_DIR$/test/service/HttpTaskManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/HttpTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/HttpTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/HttpTaskServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/HttpTaskServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/KVServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/KVServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/HTTPTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/HttpTaskManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/KVTaskClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/KVTaskClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/Managers.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/Managers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/api/HttpTaskServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/api/HttpTaskServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/service/HTTPTaskManagerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +37,6 @@
         <option name="argument" value="--tags" />
         <option name="title" value="All" />
       </GitPushTagMode>
-    </option>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
-      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -105,6 +106,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EpicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-sprint2-hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.model" />
+      <option name="MAIN_CLASS_NAME" value="test.model.EpicTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileBackedTasksManagerTest and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-sprint2-hw" />
       <extension name="coverage">
@@ -140,21 +156,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpTaskManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-sprint2-hw" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.service" />
-      <option name="MAIN_CLASS_NAME" value="test.service.HttpTaskManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HttpTaskServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-sprint2-hw" />
       <extension name="coverage">
@@ -175,8 +176,8 @@
         <item itemvalue="JUnit.HttpTaskServerTest" />
         <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
         <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.HttpTaskManagerTest" />
+        <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
+        <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
       </list>
     </recent_temporary>
   </component>
@@ -308,14 +309,7 @@
       <option name="project" value="LOCAL" />
       <updated>1652883252980</updated>
     </task>
-    <task id="LOCAL-00018" summary="fix &quot;Роман С ремонт кода&quot;">
-      <created>1653922253660</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1653922253660</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,21 +332,16 @@
     <MESSAGE value="fix &quot;Роман С исправил модификаторы, перенес статики&quot;" />
     <MESSAGE value="fix &quot;Роман С добавил постоянные, убрал метод toString&quot;" />
     <MESSAGE value="fix &quot;Роман С добавил тесты&quot;" />
-    <MESSAGE value="fix &quot;Роман С ремонт кода&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix &quot;Роман С ремонт кода&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix &quot;Роман С добавил тесты&quot;" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/api/HttpTaskServer.java</url>
-          <line>184</line>
-          <properties class="api.HttpTaskServer" method="postEpic">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="49" />
+          <line>86</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

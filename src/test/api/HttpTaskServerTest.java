@@ -8,10 +8,7 @@ import model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import service.AbstractElementAdapter;
-import service.IdGenerator;
-import service.Managers;
-import service.TaskManager;
+import service.*;
 
 import java.io.IOException;
 import java.net.URI;
@@ -25,9 +22,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HttpTaskServerTest {
     public static final int PORT = 8080;
-    public static final String LIST_WRONG = "Неправильное количество задач в списке";
-    public static final String HISTORY_WRONG = "Неправильный список истории";
-    public static final String STATUS_WRONG = "Неправильный статус";
     public static final String TASK_NOT_REMOVE = "Задача не удалилась";
     public static final String TASK_NOT_CREATE = "Задача не создалась";
     public static final String NAME = "task";
@@ -36,23 +30,26 @@ class HttpTaskServerTest {
     public static final LocalDateTime START_TIME_2 = LocalDateTime.of(2022, 6, 1, 1, 1);
     public IdGenerator generator = new IdGenerator();
     String url = "http://localhost:" + PORT;
-    private static TaskManager taskManager;
+    private HttpTaskManager taskManager;
     HttpClient client = HttpClient.newHttpClient();
     HttpTaskServer httpTaskServer;
     KVServer kvServer;
 
-    HttpTaskServerTest() throws IOException {
-    }
-
     @BeforeEach
-    void startServers() throws IOException {
+    void startServers() throws IOException, InterruptedException {
         kvServer = new KVServer();
         kvServer.start();
         taskManager = Managers.getDefault();
         httpTaskServer = new HttpTaskServer();
         httpTaskServer.startServer();
         generator.setCounterId(0);
-        taskManager.removeAll();
+        URI urlTasksDelete = URI.create(url + "/tasks");
+        HttpRequest requestDelete = HttpRequest.newBuilder()
+                .uri(urlTasksDelete)
+                .version(HttpClient.Version.HTTP_1_1)
+                .DELETE()
+                .build();
+        HttpResponse<String> response = client.send(requestDelete, HttpResponse.BodyHandlers.ofString());
     }
 
     @AfterEach
