@@ -1,13 +1,16 @@
 package api;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import model.AbstractTask;
 import model.Epic;
 import model.Subtask;
 import model.Task;
-import service.HTTPTaskManager;
+import service.AbstractElementAdapter;
+import service.HttpTaskManager;
 import service.Managers;
 
 import java.io.IOException;
@@ -18,21 +21,28 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public class HttpTaskServer {
-    private static final int NEW_PORT = 8080;
-    private static Gson gson = new Gson();
-    static HttpServer httpServer;
-    public static HTTPTaskManager fileManager = Managers.getDefault();
+    private  final int NEW_PORT = 8080;
+
+     HttpServer httpServer;
+    public  HttpTaskManager fileManager;
     public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
+    Gson gson;
 
     public HttpTaskServer() throws IOException {
         httpServer = HttpServer.create();
         httpServer.bind(new InetSocketAddress(NEW_PORT), 0);
         httpServer.createContext("/tasks", new TasksHandler());
+        fileManager = Managers.getDefault();
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.serializeNulls()
+                .registerTypeAdapter(AbstractTask.class, new AbstractElementAdapter());
+        gson = gsonBuilder.create();
     }
 
-    static class TasksHandler implements HttpHandler {
+     class TasksHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange httpExchange) throws IOException {
+
             String response = "";
             String method = httpExchange.getRequestMethod();
             String path = httpExchange.getRequestURI().getPath();
@@ -92,6 +102,7 @@ public class HttpTaskServer {
                             httpExchange.sendResponseHeaders(200, 0);
                         } else if (method.equals("POST")) {
                             postEpic(body);
+                            response = "Задача создалась";
                             httpExchange.sendResponseHeaders(201, 0);
                         }
                         break;
@@ -111,6 +122,7 @@ public class HttpTaskServer {
                             httpExchange.sendResponseHeaders(200, 0);
                         } else if (method.equals("POST")) {
                             postTask(body);
+                            response = "Задача создалась";
                             httpExchange.sendResponseHeaders(201, 0);
                         }
                         break;
@@ -139,7 +151,7 @@ public class HttpTaskServer {
         httpServer.stop(0);
     }
 
-    protected static String actionWithAllTasks(String method) {
+    protected  String actionWithAllTasks(String method) {
         if (method.equals("GET")) {
             return gson.toJson(fileManager.getPrioritizedTasks());
         } else if (method.equals("DELETE")) {
@@ -150,31 +162,31 @@ public class HttpTaskServer {
         }
     }
 
-    protected static String actionWithTasks() {
+    protected  String actionWithTasks() {
         return gson.toJson(fileManager.getTasks());
     }
 
-    protected static String actionWithEpics() {
+    protected String actionWithEpics() {
         return gson.toJson(fileManager.getEpics());
     }
 
-    protected static String actionWithSubtasks() {
+    protected String actionWithSubtasks() {
         return gson.toJson(fileManager.getSubtasks());
     }
 
-    protected static String actionWithHistory() {
+    protected String actionWithHistory() {
         return gson.toJson(fileManager.getNewHistory());
     }
 
-    protected static void postTask(String body) {
+    protected void postTask(String body) {
         fileManager.createTask(gson.fromJson(body, Task.class));
     }
 
-    protected static void postEpic(String body) {
+    protected void postEpic(String body) {
         fileManager.createEpic(gson.fromJson(body, Epic.class));
     }
 
-    protected static void postSubtask(String body) {
+    protected void postSubtask(String body) {
         fileManager.createSubtask(gson.fromJson(body, Subtask.class));
     }
 }
