@@ -48,8 +48,7 @@ class HttpTaskServerTest {
                 .uri(urlTasksDelete)
                 .version(HttpClient.Version.HTTP_1_1)
                 .DELETE()
-                .build();
-        HttpResponse<String> response = client.send(requestDelete, HttpResponse.BodyHandlers.ofString());
+                .build();client.send(requestDelete, HttpResponse.BodyHandlers.ofString());
     }
 
     @AfterEach

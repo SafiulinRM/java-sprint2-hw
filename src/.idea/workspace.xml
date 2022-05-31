@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="971547dc-a711-4a4b-9f96-8d9b7a47abce" name="Changes" comment="fix &quot;Роман С ремонт кода&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/HttpTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/HttpTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/KVTaskClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/KVTaskClient.java" afterDir="false" />
+    <list default="true" id="71e58955-8d97-4b09-a5c7-64f65b0ebbbf" name="Changes" comment="fix &quot;Роман С ремонт кода&quot;">
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/HttpTaskManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/service/KVTaskClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/api/HttpTaskServerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-sprint2-hw/test/service/HttpTaskManagerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/api/HttpTaskServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/api/HttpTaskServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/service/HttpTaskManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/HttpTaskManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +92,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HttpTaskServerTest">
+  <component name="RunManager" selected="JUnit.HttpTaskManagerTest">
     <configuration name="FileBackedTasksManager" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="service.FileBackedTasksManager" />
       <module name="java-sprint2-hw" />
@@ -172,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HttpTaskManagerTest" />
         <item itemvalue="JUnit.HttpTaskServerTest" />
         <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
         <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.HttpTaskManagerTest" />
       </list>
     </recent_temporary>
   </component>
