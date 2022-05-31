@@ -92,7 +92,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HttpTaskManagerTest">
+  <component name="RunManager" selected="JUnit.HttpTaskServerTest">
     <configuration name="FileBackedTasksManager" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="service.FileBackedTasksManager" />
       <module name="java-sprint2-hw" />
@@ -174,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HttpTaskManagerTest" />
         <item itemvalue="JUnit.HttpTaskServerTest" />
         <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
         <item itemvalue="JUnit.FileBackedTasksManagerTest and 2 more" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.HttpTaskManagerTest" />
       </list>
     </recent_temporary>
   </component>

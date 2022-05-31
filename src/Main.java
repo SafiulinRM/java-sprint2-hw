@@ -24,13 +24,11 @@ public class Main {
         HttpClient client = HttpClient.newHttpClient();
         String url = "http://localhost:" + PORT;
         IdGenerator generator = new IdGenerator();
-        TaskManager taskManager;
         HttpTaskServer httpTaskServer;
         KVServer kvServer;
         try {
             kvServer = new KVServer();
             kvServer.start();
-            taskManager = Managers.getDefault();
             httpTaskServer = new HttpTaskServer();
             httpTaskServer.startServer();
         } catch (IOException e) {

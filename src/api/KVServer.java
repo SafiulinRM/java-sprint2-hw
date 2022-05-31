@@ -32,7 +32,7 @@ public class KVServer {
         try {
             System.out.println("\n/load");
             if (!hasAuth(h)) {
-                System.out.println("Запрос неавторизован, нужен параметр в query API_TOKEN со значением апи-ключа");
+                System.out.println("Запрос неавторизован, нужен параметр в query apiTokenClient со значением апи-ключа");
                 h.sendResponseHeaders(403, 0);
                 return;
             }
@@ -58,7 +58,7 @@ public class KVServer {
         try {
             System.out.println("\n/save");
             if (!hasAuth(h)) {
-                System.out.println("Запрос неавторизован, нужен параметр в query API_TOKEN со значением апи-ключа");
+                System.out.println("Запрос неавторизован, нужен параметр в query apiTokenClient со значением апи-ключа");
                 h.sendResponseHeaders(403, 0);
                 return;
             }
@@ -104,7 +104,7 @@ public class KVServer {
     public void start() {
         System.out.println("Запускаем сервер на порту " + PORT);
         System.out.println("Открой в браузере http://localhost:" + PORT + "/");
-        System.out.println("API_TOKEN: " + apiToken);
+        System.out.println("apiTokenClient: " + apiToken);
         server.start();
     }
 
@@ -114,7 +114,7 @@ public class KVServer {
 
     protected boolean hasAuth(HttpExchange h) {
         String rawQuery = h.getRequestURI().getRawQuery();
-        return rawQuery != null && (rawQuery.contains("API_TOKEN=" + apiToken) || rawQuery.contains("API_TOKEN=DEBUG"));
+        return rawQuery != null && (rawQuery.contains("apiTokenClient=" + apiToken) || rawQuery.contains("apiTokenClient=DEBUG"));
     }
 
     protected String readText(HttpExchange h) throws IOException {

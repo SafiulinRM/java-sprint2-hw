@@ -1,12 +1,19 @@
 package service;
 
-public class Managers {
-    private static HTTPTaskManager taskManager;
-    private static HistoryManager historyManager;
+import java.net.URI;
 
-    public static HTTPTaskManager getDefault() {
-        if (taskManager == null) {
-            taskManager = new HTTPTaskManager("http://localhost:8078/register");
+public class Managers {
+    private static HttpTaskManager taskManager;
+    private static HistoryManager historyManager;
+private static KVTaskClient client;
+
+    public static HttpTaskManager getDefault() {
+        if (taskManager == null && client == null) {
+            taskManager = new HttpTaskManager("http://localhost:8078/register");
+            if (taskManager == null) {
+                client = new KVTaskClient(URI.create("http://localhost:8078"));
+                taskManager = client.load("зеленый");
+            }
         }
         return taskManager;
     }
